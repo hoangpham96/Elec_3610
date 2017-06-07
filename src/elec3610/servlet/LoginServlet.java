@@ -19,15 +19,10 @@ protected void doGet(HttpServletRequest request,
 	
 	String username = request.getParameter("username");
 	String password = request.getParameter("password");
+	String name = "";
 	boolean success = false;
 	
-	try {
-//		PrintWriter out = response.getWriter();
-//		response.setContentType("text;html;charset=utf-8");
-//		out = response.getWriter();
-//		out.print(username + "\n");
-//		out.print(password + "\n");
-		
+	try {		
 		if (username != null && password != null){
 			Class.forName("com.mysql.jdbc.Driver");
 			String mysqlUrl = "jdbc:mysql://localhost:3306/elec3610";
@@ -42,15 +37,19 @@ protected void doGet(HttpServletRequest request,
 			if (result.getRow() > 0){
 				success = true;
 			}
+			name = result.getString(4)+" "+result.getString(5);
+			result.close();
 		}
 		else{
 			success = false;
 		}
 
-		
 		if (success){
 			Cookie usernameCookie = new Cookie("username",username);
 		    response.addCookie(usernameCookie);
+		    Cookie nameCookie = new Cookie("name",name);
+		    response.addCookie(nameCookie);
+		    
 		    PrintWriter out = response.getWriter();  
 		    response.setContentType("text/html");  
 		    out.println("<script type=\"text/javascript\">");  

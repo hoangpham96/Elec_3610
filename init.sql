@@ -7,6 +7,8 @@ CREATE TABLE user (
 	id int(11) NOT NULL AUTO_INCREMENT,
 	username varchar(30) DEFAULT NULL,
 	password varchar(100) DEFAULT NULL,
+	firstname varchar(30) DEFAULT NULL,
+	lastname varchar(30) DEFAULT NULL,
 	gender char(1) DEFAULT NULL,
 	address varchar(200) DEFAULT NULL,
 	email varchar(100) DEFAULT NULL,
@@ -43,8 +45,8 @@ CREATE TABLE usergamelist (
         ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-INSERT INTO user() VALUES(NULL, "test", "test", "M", "address goes here", "test@test.com");
-INSERT INTO user() VALUES(NULL, "George", "Michael", "M", "1 George St, Sydney, NSW 2000", "GM@gmail.com");
+INSERT INTO user() VALUES(NULL, "test", "test", "Testy", "McTest", "M", "address goes here", "test@test.com");
+INSERT INTO user() VALUES(NULL, "gmike", "1234", "George", "Michael", "M", "1 George St, Sydney, NSW 2000", "GM@gmail.com");
 
 INSERT INTO game() VALUES(NULL, "Storm Blood", "u28");
 INSERT INTO game() VALUES(NULL, "MotoGp17", "u30");
