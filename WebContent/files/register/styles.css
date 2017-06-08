@@ -1721,3 +1721,33 @@ body {
   font-size:20px;
 }
 
+#regSubmit_div {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:254px;
+  height:57px;
+  background:inherit;
+  background-color:rgba(22, 155, 213, 1);
+  border:none;
+  border-radius:5px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-size:20px;
+}
+#regSubmit {
+  position:absolute;
+  left:900px;
+  top:360px;
+  width:254px;
+  height:57px;
+  font-size:20px;
+}
+#regSubmittext {
+  position:absolute;
+  left:2px;
+  top:16px;
+  width:250px;
+  word-wrap:break-word;
+}
