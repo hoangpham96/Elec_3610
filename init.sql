@@ -52,17 +52,21 @@ INSERT INTO user() VALUES(NULL, "test", "test", "Testy", "McTest", "M", "address
 INSERT INTO user() VALUES(NULL, "gmike", "1234", "George", "Michael", "M", "1 George St, Sydney, NSW 2000", "GM@gmail.com");
 
 INSERT INTO game() VALUES(NULL, "Storm Blood", "u28");
-INSERT INTO game() VALUES(NULL, "MotoGp17", "u30");
-INSERT INTO game() VALUES(NULL, "DIRT4", "u32");
-INSERT INTO game() VALUES(NULL, "MORROWIND", "u34");
-INSERT INTO game() VALUES(NULL, "TEKKEN7", "u38");
-INSERT INTO game() VALUES(NULL, "TEKKEN7pc", "u36");
+INSERT INTO game() VALUES(NULL, "Moto GP 17", "u30");
+INSERT INTO game() VALUES(NULL, "DiRT4", "u32");
+INSERT INTO game() VALUES(NULL, "Morrowind", "u34");
+INSERT INTO game() VALUES(NULL, "Tekken 7", "u36");
+INSERT INTO game() VALUES(NULL, "Tekken 7 Deluxe", "u38");
 INSERT INTO game() VALUES(NULL, "Batman", "u68");
-INSERT INTO game() VALUES(NULL, "Battlegrounds", "u72");
 INSERT INTO game() VALUES(NULL, "Nightmares", "u70");
+INSERT INTO game() VALUES(NULL, "Battlegrounds", "u72");
 INSERT INTO game() VALUES(NULL, "Prey", "u74");
-INSERT INTO game() VALUES(NULL, "Dawn of War", "u78");
-INSERT INTO game() VALUES(NULL, "Rising Storm", "u76");
+INSERT INTO game() VALUES(NULL, "Rising Storm 2", "u76");
+INSERT INTO game() VALUES(NULL, "Umbrella Corps", "u1378");
+INSERT INTO game() VALUES(NULL, "Lego Avengers", "u1380");
+INSERT INTO game() VALUES(NULL, "Vikings", "u1382");
+INSERT INTO game() VALUES(NULL, "Thief", "u1384");
+
 
 INSERT INTO paymentDetail() VALUES(1, "AMEX", "1234567812345678", "04-19", 693);
 INSERT INTO paymentDetail() VALUES(2, "MAST", "5213467864123465", "06-18", 751);
