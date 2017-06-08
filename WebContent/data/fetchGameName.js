@@ -24,6 +24,7 @@ $(document).ready(function(){
 	}
 	if(gameName != null){
 		$("#u3475").replaceWith("<div id='u3475' class='text' style='visibility: visible;'><p><span>"+gameName+"</span></p><p><span><br></span></p></div>");
+		$("#u3449").replaceWith("<div id='u3449' class='text' style='visibility: visible;'><p><span>You're reviewing: "+gameName+"</span></p><p><span>How do you rate this product?</span></p><p><span><br></span></p></div>");
 	}
 	
 	//Fetching game name

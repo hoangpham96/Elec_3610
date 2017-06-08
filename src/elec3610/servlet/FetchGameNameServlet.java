@@ -39,14 +39,6 @@ protected void doGet(HttpServletRequest request,
 	    PrintWriter out = response.getWriter();  
 	    response.setContentType("text");
 	    out.println("game_info_page.html?imgID="+imgID+"&gameName="+gameName);
-		
-//	    PrintWriter out = response.getWriter();  
-//	    response.setContentType("text/html");  
-//	    out.println("<script type=\"text/javascript\">");  
-//	    out.println("window.location = 'game_info_page.html?imgID="+imgID+"&gameName="+gameName+"';");  
-//	    out.println("</script>");
-//		response.sendRedirect("main_page.html");
-//		response.sendRedirect("game_info_page.html?imgID="+imgID+"&gameName="+gameName);
 	    
 	} catch (Exception e) {
 		e.printStackTrace();
