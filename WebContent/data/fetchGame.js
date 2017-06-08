@@ -14,11 +14,11 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 $(document).ready(function(){
+	var gameID = getUrlParameter('gID')
 	var imageID = getUrlParameter('imgID');
 	var gameName = getUrlParameter('gName');
-	console.log(imageID);
-	console.log(gameName)
 	
+	//Replace picture and title
 	if(imageID != null){
 		$("#u3596_img").replaceWith("<img id='u3596_img' class='img' src='images/games/"+imageID+".jpg'>");
 	}
@@ -27,15 +27,22 @@ $(document).ready(function(){
 		$("#u3449").replaceWith("<div id='u3449' class='text' style='visibility: visible;'><p><span>You're reviewing: "+gameName+"</span></p><p><span>How do you rate this product?</span></p><p><span><br></span></p></div>");
 	}
 	
-	//Fetching game name
-	if(imageID != null && gameName == null){
+	//Fetching if gameID is known
+	if(gameID != null && (gameName == null || imageID == null) ){
+		$.post("/Elec_3610/fetchgame", {gID: gameID}, function( data ) {
+			  document.location.replace(data);
+		});
+	}
+	
+	//Fetching if imageID is known
+	if(imageID != null && (gameName == null || gameID == null) ){
 		$.post("/Elec_3610/fetchgame", {imgID: imageID}, function( data ) {
 			  document.location.replace(data);
 		});
 	}
 	
-	//Fetching game image
-	if(imageID == null && gameName != null){
+	//Fetching if gameName is known
+	if(gameName != null  && (imageID == null || gameID == null) ){
 		$.post("/Elec_3610/fetchgame", {gameName: gameName}, function( data ) {
 			  document.location.replace(data);
 		});

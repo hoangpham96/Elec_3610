@@ -14,10 +14,12 @@ public class FetchGameServlet extends HttpServlet {
 protected void doGet(HttpServletRequest request,
 					HttpServletResponse response) throws ServletException {
 	
+	String gID = request.getParameter("gID");
 	String imgID = request.getParameter("imgID");
 	String gName = request.getParameter("gameName");
-	System.out.println(imgID);
-	System.out.println(gName);
+	String whereClause = "";
+
+
 	
 	try {		
 		Class.forName("com.mysql.jdbc.Driver");
@@ -27,8 +29,28 @@ protected void doGet(HttpServletRequest request,
 		userInfo.put("password", "root");
 		Connection connection = DriverManager.getConnection(mysqlUrl,userInfo);
 		Statement stmt = connection.createStatement();
-		if (imgID != null && gName == null){
-			String sql = "SELECT name FROM game WHERE imgID = '"+imgID+"';";
+		if (gID != null){
+			whereClause = "id = '" +gID+ "';";
+		}
+		else if (imgID != null){
+			whereClause = "imgID = '" +imgID+ "';";
+		}
+		else if (gName != null){
+			whereClause = "name = '" +gName+ "';";
+		}
+		
+		
+		if (gID == null){
+			String sql = "SELECT id FROM game WHERE " + whereClause;
+			ResultSet result = stmt.executeQuery(sql);
+			result.first();
+			if (result.getRow() > 0){
+				gID = result.getString(1);
+			}
+			result.close();
+		}
+		if (gName == null){
+			String sql = "SELECT name FROM game WHERE " + whereClause;
 			ResultSet result = stmt.executeQuery(sql);
 			result.first();
 			if (result.getRow() > 0){
@@ -36,8 +58,8 @@ protected void doGet(HttpServletRequest request,
 			}
 			result.close();
 		}
-		if (gName != null && imgID == null){
-			String sql = "SELECT imgID FROM game WHERE name = '"+gName+"';";
+		if (imgID == null){
+			String sql = "SELECT imgID FROM game WHERE " + whereClause;
 			ResultSet result = stmt.executeQuery(sql);
 			result.first();
 			if (result.getRow() > 0){
@@ -45,9 +67,11 @@ protected void doGet(HttpServletRequest request,
 			}
 			result.close();
 		}	
+		
+		
 	    PrintWriter out = response.getWriter();  
 	    response.setContentType("text");
-	    out.println("game_info_page.html?imgID="+imgID+"&gName="+gName);
+	    out.println("game_info_page.html?gID="+gID+"&imgID="+imgID+"&gName="+gName);
 	    
 	} catch (Exception e) {
 		e.printStackTrace();
