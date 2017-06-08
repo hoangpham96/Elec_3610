@@ -14,8 +14,7 @@ public class FetchServlet extends HttpServlet {
 protected void doGet(HttpServletRequest request,
 					HttpServletResponse response) throws ServletException {
 	
-	String username = request.getParameter("username");
-	int uid = 1;
+	String uID = request.getParameter("uID");
 	String name = "";
 	String gender = "";
 	String address = "";
@@ -24,9 +23,9 @@ protected void doGet(HttpServletRequest request,
 	String user = "";
 	String games = "";
 	String payments = "";
-	
+			
 	try {		
-		if (username != null){
+		if (uID != null){
 			Class.forName("com.mysql.jdbc.Driver");
 			String mysqlUrl = "jdbc:mysql://localhost:3306/elec3610";
 			Properties userInfo = new Properties();
@@ -34,11 +33,10 @@ protected void doGet(HttpServletRequest request,
 			userInfo.put("password", "root");
 			Connection connection = DriverManager.getConnection(mysqlUrl,userInfo);
 			Statement stmt = connection.createStatement();
-			String sql = "SELECT * FROM user WHERE username = '"+username+"';";
+			String sql = "SELECT * FROM user WHERE id = '"+uID+"';";
 			ResultSet result = stmt.executeQuery(sql);
 			result.first();
 			
-			uid = result.getInt(1);
 			name = result.getString(4)+" "+result.getString(5);
 			gender = result.getString(6);
 			address = result.getString(7);
@@ -48,7 +46,7 @@ protected void doGet(HttpServletRequest request,
 			result.close();
 			
 			Statement stmt2 = connection.createStatement();
-			String sql2 = "SELECT G.name, G.imgID FROM Game G JOIN usergamelist UG ON (G.id = UG.gameID) WHERE userid = '"+uid+"';";
+			String sql2 = "SELECT G.name, G.imgID FROM Game G JOIN usergamelist UG ON (G.id = UG.gameID) WHERE userid = '"+uID+"';";
 			ResultSet result2 = stmt2.executeQuery(sql2);
 			result2.first();
 			if (result2.getRow() > 0){
@@ -61,7 +59,7 @@ protected void doGet(HttpServletRequest request,
 			result2.close();
 			
 			Statement stmt3 = connection.createStatement();
-			String sql3 = "SELECT paymentType, cardNum, cardExp, cardCCV FROM paymentDetail WHERE userid = '"+uid+"';";
+			String sql3 = "SELECT paymentType, cardNum, cardExp, cardCCV FROM paymentDetail WHERE userid = '"+uID+"';";
 			ResultSet result3 = stmt3.executeQuery(sql3);
 			result3.first();
 			if (result3.getRow() > 0){
@@ -74,7 +72,6 @@ protected void doGet(HttpServletRequest request,
 			result3.close();
 		}
 
-		
 		Cookie userDetail = new Cookie("userDetail",user);
 		Cookie gamesDetail = new Cookie("gameDetail",games);
 		Cookie paymentsDetail = new Cookie("paymentDetail",payments);

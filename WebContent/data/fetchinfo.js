@@ -15,56 +15,60 @@ $(document).ready(function(){
 		fetched = true;
 	}
 	
-	//Remove the quotes at the beginning and end
-	userStr = removeQuotes(userStr);
-	gameStr = removeQuotes(gameStr);
-	paymentStr = removeQuotes(paymentStr);
+	if (fetched){
 
-	var user = userStr.split("-");
-	var games = gameStr.split(", ");
-	var payments = paymentStr.split(", ");
-	
-	//Remove empty sets
-	games.pop();
-	payments.pop();
-	
-	console.log(user);
-	console.log(games);
-	console.log(payments);
 		
-	//Replacing user details placeholder
-	var gender = "";
-	if (user[1]=="M"){
-		gender = "Male";
-	}
-	else{
-		gender = "Female";
-	}
+		//Remove the quotes at the beginning and end
+		userStr = removeQuotes(userStr);
+		gameStr = removeQuotes(gameStr);
+		paymentStr = removeQuotes(paymentStr);
 	
-	$("#u1323").replaceWith("<div id='u1323' class='text' style='visibility: visible;'><p><span>"+user[0]+", "+gender+"</span></p><p><span>"+user[2]+"</span></p><p><span>"+user[3]+"</span></p></div>");
-	
-	//Replacing card info
-	var mainPayment = payments[0].split("-");
-	switch(mainPayment[0]){
-		case "AMEX":
-			$("#u1386_img").replaceWith("<img id='u1386_img' class='img' src='images/cards/amex.png'>");
-			break;
-		case "VISA":
-			$("#u1386_img").replaceWith("<img id='u1386_img' class='img' src='images/cards/visa.png'>");
-			break;
-		case "MAST":
-			$("#u1386_img").replaceWith("<img id='u1386_img' class='img' src='images/cards/mastercard.png'>");
-			break;
-		default:
-			$("#u1386_img").replaceWith("<img id='u1386_img' class='img' src='images/cards/mastercard.png'>");
+		var user = userStr.split("-");
+		var games = gameStr.split(", ");
+		var payments = paymentStr.split(", ");
+		
+		//Remove empty sets
+		games.pop();
+		payments.pop();
+		
+		console.log(user);
+		console.log(games);
+		console.log(payments);
+			
+		//Replacing user details placeholder
+		var gender = "";
+		if (user[1]=="M"){
+			gender = "Male";
+		}
+		else{
+			gender = "Female";
+		}
+		
+		$("#u1323").replaceWith("<div id='u1323' class='text' style='visibility: visible;'><p><span>"+user[0]+", "+gender+"</span></p><p><span>"+user[2]+"</span></p><p><span>"+user[3]+"</span></p></div>");
+		
+		//Replacing card info
+		var mainPayment = payments[0].split("-");
+		switch(mainPayment[0]){
+			case "AMEX":
+				$("#u1386_img").replaceWith("<img id='u1386_img' class='img' src='images/cards/amex.png'>");
+				break;
+			case "VISA":
+				$("#u1386_img").replaceWith("<img id='u1386_img' class='img' src='images/cards/visa.png'>");
+				break;
+			case "MAST":
+				$("#u1386_img").replaceWith("<img id='u1386_img' class='img' src='images/cards/mastercard.png'>");
+				break;
+			default:
+				$("#u1386_img").replaceWith("<img id='u1386_img' class='img' src='images/cards/mastercard.png'>");
+		}
+		
+		lastFour = mainPayment[1].substring(mainPayment[1].length-4,mainPayment[1].length);
+		console.log(lastFour);
+		$("#u1389").replaceWith("<div id='u1389' class='text' style='visibility: visible;'><p><span>XXXX - XXXX - XXXX - "+lastFour+"</span></p></div>");	
 	}
-	
-	lastFour = mainPayment[1].substring(mainPayment[1].length-4,mainPayment[1].length);
-	console.log(lastFour);
-	$("#u1389").replaceWith("<div id='u1389' class='text' style='visibility: visible;'><p><span>XXXX - XXXX - XXXX - "+lastFour+"</span></p></div>");
 	
 	//Fetch info
-	if (!fetched){
-		$.post("/Elec_3610/fetch", {username: getCookie("username")});
+	else{
+		$.post("/Elec_3610/fetch", {uID: getCookie("uID")});
 	}
 });

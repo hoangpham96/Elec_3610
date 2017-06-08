@@ -17,6 +17,7 @@ protected void doGet(HttpServletRequest request,
 	String username = request.getParameter("username");
 	String password = request.getParameter("password");
 	String name = "";
+	String uID = "";
 	boolean success = false;
 	
 	try {		
@@ -34,6 +35,7 @@ protected void doGet(HttpServletRequest request,
 			if (result.getRow() > 0){
 				success = true;
 				name = result.getString(4)+" "+result.getString(5);
+				uID = result.getString(1);
 			}
 			result.close();
 		}
@@ -42,8 +44,8 @@ protected void doGet(HttpServletRequest request,
 		}
 
 		if (success){
-			Cookie usernameCookie = new Cookie("username",username);
-		    response.addCookie(usernameCookie);
+			Cookie userCookie = new Cookie("uID",uID);
+		    response.addCookie(userCookie);
 		    Cookie nameCookie = new Cookie("name",name);
 		    response.addCookie(nameCookie);
 		    
