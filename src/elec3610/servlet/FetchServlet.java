@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-public class FetchInfoServlet extends HttpServlet {
+public class FetchServlet extends HttpServlet {
 protected void doGet(HttpServletRequest request,
 					HttpServletResponse response) throws ServletException {
 	
@@ -46,7 +46,6 @@ protected void doGet(HttpServletRequest request,
 			email = result.getString(8);
 			
 			user = name+"-"+gender+"-"+address+"-"+email;
-			System.out.println(user);
 			result.close();
 			
 			Statement stmt2 = connection.createStatement();
@@ -56,7 +55,6 @@ protected void doGet(HttpServletRequest request,
 			if (result2.getRow() > 0){
 				while(!result2.isAfterLast()){
 					String gameInfo = result2.getString(1)+"-"+result2.getString(2);
-					System.out.println(gameInfo);
 					games+=gameInfo+", ";
 					result2.next();
 				}
@@ -70,17 +68,13 @@ protected void doGet(HttpServletRequest request,
 			if (result3.getRow() > 0){
 				while(!result3.isAfterLast()){
 					String paymentInfo = result3.getString(1)+"-"+result3.getString(2)+"-"+result3.getString(3)+"-"+result3.getString(4);
-					System.out.println(paymentInfo);
 					payments+=paymentInfo+", ";
 					result3.next();
 				}
 			}
 			result3.close();
 		}
-		System.out.println("-----------");
-		System.out.println(user);
-		System.out.println(games);
-		System.out.println(payments);
+
 		
 		Cookie userDetail = new Cookie("userDetail",user);
 		Cookie gamesDetail = new Cookie("gameDetail",games);
@@ -99,6 +93,7 @@ protected void doGet(HttpServletRequest request,
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
+	
 }
 
 protected void doPost(HttpServletRequest request,

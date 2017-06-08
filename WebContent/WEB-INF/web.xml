@@ -29,12 +29,12 @@
 	</servlet-mapping>
 	
   	<servlet>
-		<servlet-name>FetchInfo</servlet-name>
-		<servlet-class>elec3610.servlet.FetchInfoServlet</servlet-class>
+		<servlet-name>Fetch</servlet-name>
+		<servlet-class>elec3610.servlet.FetchServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>FetchInfo</servlet-name>
-		<url-pattern>/fetchinfo</url-pattern>
+		<servlet-name>Fetch</servlet-name>
+		<url-pattern>/fetch</url-pattern>
 	</servlet-mapping>
 	
 </web-app>
