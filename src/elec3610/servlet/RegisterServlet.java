@@ -1,5 +1,6 @@
 package elec3610.servlet;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -21,7 +22,21 @@ public class RegisterServlet extends HttpServlet {
 		String gender = request.getParameter("gender");
 		String email = request.getParameter("email");
 		String address = request.getParameter("address");
-				
+		try{
+			PrintWriter out1 = response.getWriter();  
+			response.setContentType("text");
+			out1.println(username);
+			out1.println(password);
+			out1.println(firstname);
+			out1.println(lastname);
+			out1.println(gender);
+			out1.println(address);
+			out1.println(email);
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		
 		try {		
 			if (username != null && password != null){
 				Class.forName("com.mysql.jdbc.Driver");
@@ -31,17 +46,26 @@ public class RegisterServlet extends HttpServlet {
 				userInfo.put("password", "root");
 				Connection connection = DriverManager.getConnection(mysqlUrl,userInfo);
 				Statement stmt = connection.createStatement();
-				String sql = "INSERT INTO user() VALUES(NULL, "+username+", "+password+", "+firstname
-						+", "+lastname+", "+gender+", "+address+", "+email+");";
-				stmt.executeUpdate(sql);
-				System.out.println("Inserted records into the table...");
-				
-			    PrintWriter out = response.getWriter();  
-			    response.setContentType("text/html");  
-			    out.println("<script type=\"text/javascript\">");
-			    out.println("alert('Register successful')"); 
-			    out.println("window.location = 'main_page.html';");  
-			    out.println("</script>");
+				String sql = "INSERT INTO user() VALUES(NULL, '"+username+"', '"+password+"', '"+firstname
+						+"', '"+lastname+"', '"+gender+"', '"+address+"', '"+email+"');";
+				System.out.println(sql);
+				try{
+					stmt.executeUpdate(sql);
+					System.out.println("Inserted records into the table...");
+					
+				    PrintWriter out = response.getWriter();  
+				    response.setContentType("text/html");  
+				    out.println("<script type=\"text/javascript\">");
+				    out.println("alert('Register successful')"); 
+				    out.println("window.location = 'main_page.html';");  
+				    out.println("</script>");
+				}
+				catch (Exception e) {
+					PrintWriter out = response.getWriter();  
+					response.setContentType("text");
+					out.println("Test page");
+					e.printStackTrace();
+				}
 			}
 			else {
 				 PrintWriter out = response.getWriter();  

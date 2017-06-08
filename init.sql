@@ -13,7 +13,7 @@ CREATE TABLE user (
 	address varchar(200) DEFAULT NULL,
 	email varchar(100) DEFAULT NULL,
 	PRIMARY KEY (id),
-	CONSTRAINT unique_user UNIQUE (username,password)
+	CONSTRAINT unique_user UNIQUE (username)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 CREATE TABLE game (
