@@ -15,30 +15,39 @@ protected void doGet(HttpServletRequest request,
 					HttpServletResponse response) throws ServletException {
 	
 	String imgID = request.getParameter("imgID");
-	String gameName = "";
+	String gName = request.getParameter("gameName");
+	System.out.println(imgID);
+	System.out.println(gName);
 	
 	try {		
-		if (imgID != null){
-			Class.forName("com.mysql.jdbc.Driver");
-			String mysqlUrl = "jdbc:mysql://localhost:3306/elec3610";
-			Properties userInfo = new Properties();
-			userInfo.put("user", "root");
-			userInfo.put("password", "root");
-			Connection connection = DriverManager.getConnection(mysqlUrl,userInfo);
-			Statement stmt = connection.createStatement();
+		Class.forName("com.mysql.jdbc.Driver");
+		String mysqlUrl = "jdbc:mysql://localhost:3306/elec3610";
+		Properties userInfo = new Properties();
+		userInfo.put("user", "root");
+		userInfo.put("password", "root");
+		Connection connection = DriverManager.getConnection(mysqlUrl,userInfo);
+		Statement stmt = connection.createStatement();
+		if (imgID != null && gName == null){
 			String sql = "SELECT name FROM game WHERE imgID = '"+imgID+"';";
 			ResultSet result = stmt.executeQuery(sql);
 			result.first();
 			if (result.getRow() > 0){
-				gameName = result.getString(1);
+				gName = result.getString(1);
 			}
 			result.close();
 		}
-		System.out.println(gameName);
-		
+		if (gName != null && imgID == null){
+			String sql = "SELECT imgID FROM game WHERE name = '"+gName+"';";
+			ResultSet result = stmt.executeQuery(sql);
+			result.first();
+			if (result.getRow() > 0){
+				imgID = result.getString(1);
+			}
+			result.close();
+		}	
 	    PrintWriter out = response.getWriter();  
 	    response.setContentType("text");
-	    out.println("game_info_page.html?imgID="+imgID+"&gameName="+gameName);
+	    out.println("game_info_page.html?imgID="+imgID+"&gName="+gName);
 	    
 	} catch (Exception e) {
 		e.printStackTrace();

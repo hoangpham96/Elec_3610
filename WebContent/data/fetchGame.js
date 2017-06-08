@@ -15,7 +15,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 $(document).ready(function(){
 	var imageID = getUrlParameter('imgID');
-	var gameName = getUrlParameter('gameName');
+	var gameName = getUrlParameter('gName');
 	console.log(imageID);
 	console.log(gameName)
 	
@@ -30,6 +30,13 @@ $(document).ready(function(){
 	//Fetching game name
 	if(imageID != null && gameName == null){
 		$.post("/Elec_3610/fetchgame", {imgID: imageID}, function( data ) {
+			  document.location.replace(data);
+		});
+	}
+	
+	//Fetching game image
+	if(imageID == null && gameName != null){
+		$.post("/Elec_3610/fetchgame", {gameName: gameName}, function( data ) {
 			  document.location.replace(data);
 		});
 	}
