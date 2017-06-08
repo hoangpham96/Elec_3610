@@ -1,5 +1,14 @@
 $(document).ready(function(){		
    $("#regSubmit").click(function(){
-   		$("#registerInput").submit();
+	   var pass = true;
+	   
+	   //Filter:
+	   
+	   
+	   
+	   
+	   if (pass){
+   			$("#registerInput").submit();
+	   }
    });
 });

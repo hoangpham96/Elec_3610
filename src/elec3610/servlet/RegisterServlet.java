@@ -22,20 +22,6 @@ public class RegisterServlet extends HttpServlet {
 		String gender = request.getParameter("gender");
 		String email = request.getParameter("email");
 		String address = request.getParameter("address");
-		try{
-			PrintWriter out1 = response.getWriter();  
-			response.setContentType("text");
-			out1.println(username);
-			out1.println(password);
-			out1.println(firstname);
-			out1.println(lastname);
-			out1.println(gender);
-			out1.println(address);
-			out1.println(email);
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
 		
 		try {		
 			if (username != null && password != null){
@@ -48,7 +34,6 @@ public class RegisterServlet extends HttpServlet {
 				Statement stmt = connection.createStatement();
 				String sql = "INSERT INTO user() VALUES(NULL, '"+username+"', '"+password+"', '"+firstname
 						+"', '"+lastname+"', '"+gender+"', '"+address+"', '"+email+"');";
-				System.out.println(sql);
 				try{
 					stmt.executeUpdate(sql);
 					System.out.println("Inserted records into the table...");
@@ -56,21 +41,26 @@ public class RegisterServlet extends HttpServlet {
 				    PrintWriter out = response.getWriter();  
 				    response.setContentType("text/html");  
 				    out.println("<script type=\"text/javascript\">");
-				    out.println("alert('Register successful')"); 
+				    out.println("alert('Register successful! Please enter your login details again to log in.')"); 
 				    out.println("window.location = 'main_page.html';");  
 				    out.println("</script>");
 				}
 				catch (Exception e) {
 					PrintWriter out = response.getWriter();  
-					response.setContentType("text");
-					out.println("Test page");
-					e.printStackTrace();
+				    response.setContentType("text/html");  
+				    out.println("<script type=\"text/javascript\">");
+				    out.println("alert('Register unsuccessful! There was an error handling your registration. Please try again.')"); 
+				    out.println("window.location = 'register.html';");  
+				    out.println("</script>");
 				}
 			}
 			else {
-				 PrintWriter out = response.getWriter();  
-				 response.setContentType("text");
-				 out.println("Test page");
+				PrintWriter out = response.getWriter();  
+			    response.setContentType("text/html");  
+			    out.println("<script type=\"text/javascript\">");
+			    out.println("alert('Register unsuccessful! There was an error handling your registration. Please try again.')"); 
+			    out.println("window.location = 'register.html';");  
+			    out.println("</script>");
 			}
 		    
 		} catch (Exception e) {
