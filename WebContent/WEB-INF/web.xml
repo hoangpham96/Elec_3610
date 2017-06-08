@@ -38,12 +38,12 @@
 	</servlet-mapping>
 	
   	<servlet>
-		<servlet-name>FetchGameName</servlet-name>
-		<servlet-class>elec3610.servlet.FetchGameNameServlet</servlet-class>
+		<servlet-name>FetchGame</servlet-name>
+		<servlet-class>elec3610.servlet.FetchGameServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>FetchGameName</servlet-name>
-		<url-pattern>/fetchgamename</url-pattern>
+		<servlet-name>FetchGame</servlet-name>
+		<url-pattern>/fetchgame</url-pattern>
 	</servlet-mapping>
 	
 </web-app>

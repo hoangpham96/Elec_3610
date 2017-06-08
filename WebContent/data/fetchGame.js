@@ -29,7 +29,7 @@ $(document).ready(function(){
 	
 	//Fetching game name
 	if(imageID != null && gameName == null){
-		$.post("/Elec_3610/fetchgamename", {imgID: imageID}, function( data ) {
+		$.post("/Elec_3610/fetchgame", {imgID: imageID}, function( data ) {
 			  document.location.replace(data);
 		});
 	}

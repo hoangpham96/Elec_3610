@@ -10,7 +10,7 @@ import java.util.Properties;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-public class FetchGameNameServlet extends HttpServlet {
+public class FetchGameServlet extends HttpServlet {
 protected void doGet(HttpServletRequest request,
 					HttpServletResponse response) throws ServletException {
 	
