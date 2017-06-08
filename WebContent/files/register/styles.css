@@ -1645,7 +1645,7 @@ body {
 
 
 
-#rftext {
+.rftext {
   width:500px;
   height:25px;
   word-wrap:break-word;
