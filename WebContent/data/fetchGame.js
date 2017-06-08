@@ -14,7 +14,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 $(document).ready(function(){
-	var gameID = getUrlParameter('gID')
+	var gameID = getUrlParameter('gID');
 	var imageID = getUrlParameter('imgID');
 	var gameName = getUrlParameter('gName');
 	

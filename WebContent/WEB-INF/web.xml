@@ -46,4 +46,13 @@
 		<url-pattern>/fetchgame</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>SaveGame</servlet-name>
+		<servlet-class>elec3610.servlet.SaveGameServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SaveGame</servlet-name>
+		<url-pattern>/save</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
