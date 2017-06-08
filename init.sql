@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS usergamelist ;
-DROP TABLE IF EXISTS transactionDetail ;
+DROP TABLE IF EXISTS paymentDetail ;
 DROP TABLE IF EXISTS user ;
 DROP TABLE IF EXISTS game ;
 
@@ -20,18 +20,20 @@ CREATE TABLE game (
 	id int(11) NOT NULL AUTO_INCREMENT,
 	name varchar(30) NOT NULL,
 	imgID varchar(10) NOT NULL,
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
+	CONSTRAINT unique_game UNIQUE (name)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-CREATE TABLE transactionDetail(
+CREATE TABLE paymentDetail(
 	userid int(11) NOT NULL,
-	transactionType char(4) NOT NULL,
+	paymentType char(4) NOT NULL,
 	cardNum varchar(16),
 	cardExp varchar(5),
 	cardCCV int(3),
 	FOREIGN KEY (userid)
         REFERENCES user(id)
-        ON DELETE CASCADE
+        ON DELETE CASCADE,
+    CONSTRAINT unique_card_for_user UNIQUE (userID,paymentType,cardNum,cardExp,cardCCV)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 CREATE TABLE usergamelist (
@@ -42,7 +44,8 @@ CREATE TABLE usergamelist (
         ON DELETE CASCADE,
     FOREIGN KEY (gameid)
         REFERENCES game(id)
-        ON DELETE CASCADE
+        ON DELETE CASCADE,
+    CONSTRAINT unique_game_for_user UNIQUE (userid,gameid)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 INSERT INTO user() VALUES(NULL, "test", "test", "Testy", "McTest", "M", "address goes here", "test@test.com");
@@ -61,9 +64,18 @@ INSERT INTO game() VALUES(NULL, "Prey", "u74");
 INSERT INTO game() VALUES(NULL, "Dawn of War", "u78");
 INSERT INTO game() VALUES(NULL, "Rising Storm", "u76");
 
-INSERT INTO transactionDetail() VALUES(1, "AMEX", "1234567812345678", "04-19", 693);
-INSERT INTO transactionDetail() VALUES(2, "MAST", "5213467864123465", "06-18", 751);
-INSERT INTO transactionDetail() VALUES(2, "VISA", "6572132463132156", "12-21", 252);
+INSERT INTO paymentDetail() VALUES(1, "AMEX", "1234567812345678", "04-19", 693);
+INSERT INTO paymentDetail() VALUES(2, "MAST", "5213467864123465", "06-18", 751);
+INSERT INTO paymentDetail() VALUES(2, "VISA", "6572132463132156", "12-21", 252);
 
 INSERT INTO usergamelist() VALUES(1,1);
+INSERT INTO usergamelist() VALUES(1,4);
+INSERT INTO usergamelist() VALUES(1,5);
+INSERT INTO usergamelist() VALUES(1,7);
+INSERT INTO usergamelist() VALUES(1,8);
+INSERT INTO usergamelist() VALUES(2,4);
+INSERT INTO usergamelist() VALUES(2,7);
+INSERT INTO usergamelist() VALUES(2,10);
+INSERT INTO usergamelist() VALUES(2,11);
+INSERT INTO usergamelist() VALUES(2,12);
 
