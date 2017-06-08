@@ -28,4 +28,13 @@
 		<url-pattern>/register</url-pattern>
 	</servlet-mapping>
 	
+  	<servlet>
+		<servlet-name>FetchInfo</servlet-name>
+		<servlet-class>elec3610.servlet.FetchInfoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FetchInfo</servlet-name>
+		<url-pattern>/fetchinfo</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
