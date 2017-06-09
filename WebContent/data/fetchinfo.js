@@ -68,7 +68,7 @@ $(document).ready(function(){
 		console.log(lastFour);
 		$("#u1389").replaceWith("<div id='u1389' class='text' style='visibility: visible;'><p><span>XXXX - XXXX - XXXX - "+lastFour+"</span></p></div>");	
 		
-		if(game.length > 0){
+		if(games.length > 0){
 			//Change game list
 			var htmlCode = "<div id='gameList'>\n";
 			
