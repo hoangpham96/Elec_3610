@@ -1,11 +1,3 @@
-function removeQuotes(str){
-	if (str.charAt(0) === '"' && str.charAt(str.length -1) === '"')
-	{
-	    return str.substr(1,str.length -2);
-	}
-}
-
-
 
 $(document).ready(function(){
 	var fetched = false;
