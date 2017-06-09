@@ -61,6 +61,7 @@ INSERT INTO game() VALUES(NULL, "Batman", "u68");
 INSERT INTO game() VALUES(NULL, "Nightmares", "u70");
 INSERT INTO game() VALUES(NULL, "Battlegrounds", "u72");
 INSERT INTO game() VALUES(NULL, "Prey", "u74");
+INSERT INTO game() VALUES(NULL, "Dawn of War 2", "u78");
 INSERT INTO game() VALUES(NULL, "Rising Storm 2", "u76");
 INSERT INTO game() VALUES(NULL, "Umbrella Corps", "u1378");
 INSERT INTO game() VALUES(NULL, "Lego Avengers", "u1380");
