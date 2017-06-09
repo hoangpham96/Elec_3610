@@ -68,22 +68,23 @@ $(document).ready(function(){
 		console.log(lastFour);
 		$("#u1389").replaceWith("<div id='u1389' class='text' style='visibility: visible;'><p><span>XXXX - XXXX - XXXX - "+lastFour+"</span></p></div>");	
 		
-		//Change game list
-		var htmlCode = "<div id='gameList'>\n";
-		
-		//Add remove button
-		for(var i=0; i< games.length; i++){
-			var game = games[i].split('-');
-			var htmlDiv = "\n<div class='ax_default image gameInList' style='left:"+220*i+"px;'>\n<img class='imageInList' src='images/games/"+game[1]+".jpg'/>\n<div id='remove-"+game[1]+"' class='ax_default primary_button removeButton'>\n<div class='removeButtonBgr'></div>\n<div class='text removeButtonText' style='visibility: visible;'>\n<p><span>Remove</span></p>\n</div>\n</div></div>\n ";
-			htmlCode += htmlDiv;
+		if(game.length > 0){
+			//Change game list
+			var htmlCode = "<div id='gameList'>\n";
+			
+			//Add remove button
+			for(var i=0; i< games.length; i++){
+				var game = games[i].split('-');
+				var htmlDiv = "\n<div class='ax_default image gameInList' style='left:"+220*i+"px;'>\n<img class='imageInList' src='images/games/"+game[1]+".jpg'/>\n<div id='remove-"+game[1]+"' class='ax_default primary_button removeButton'>\n<div class='removeButtonBgr'></div>\n<div class='text removeButtonText' style='visibility: visible;'>\n<p><span>Remove</span></p>\n</div>\n</div></div>\n ";
+				htmlCode += htmlDiv;
+			}
+			
+			//Add removeAll button
+		    htmlCode += "<div id='removeAll'class='ax_default primary_button'>\n<div id='removeAllBgr'></div>\n<div id='removeAllText' class='text' style='visibility: visible;'>\n<p><span>Remove All</span></p>\n</div>\n</div>";
+		      
+			htmlCode += "</div>";
+			$("#gameList").replaceWith(htmlCode);
 		}
-		
-		//Add removeAll button
-	    htmlCode += "<div id='removeAll'class='ax_default primary_button'>\n<div id='removeAllBgr'></div>\n<div id='removeAllText' class='text' style='visibility: visible;'>\n<p><span>Remove All</span></p>\n</div>\n</div>";
-	      
-		htmlCode += "</div>";
-		console.log(htmlCode);
-		$("#gameList").replaceWith(htmlCode);
 	}
 	
 	//Fetch info
