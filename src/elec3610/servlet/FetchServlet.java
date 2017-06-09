@@ -46,12 +46,12 @@ protected void doGet(HttpServletRequest request,
 			result.close();
 			
 			Statement stmt2 = connection.createStatement();
-			String sql2 = "SELECT G.name, G.imgID FROM Game G JOIN usergamelist UG ON (G.id = UG.gameID) WHERE userid = '"+uID+"';";
+			String sql2 = "SELECT G.id, G.name, G.imgID FROM Game G JOIN usergamelist UG ON (G.id = UG.gameID) WHERE userid = '"+uID+"';";
 			ResultSet result2 = stmt2.executeQuery(sql2);
 			result2.first();
 			if (result2.getRow() > 0){
 				while(!result2.isAfterLast()){
-					String gameInfo = result2.getString(1)+"-"+result2.getString(2);
+					String gameInfo = result2.getString(1)+"-"+result2.getString(2)+"-"+result2.getString(3);
 					games+=gameInfo+"_ ";
 					result2.next();
 				}
