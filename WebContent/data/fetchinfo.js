@@ -75,7 +75,7 @@ $(document).ready(function(){
 			//Add remove button
 			for(var i=0; i< games.length; i++){
 				var game = games[i].split('-');
-				var htmlDiv = "\n<div class='ax_default image gameInList' style='left:"+220*i+"px;'>\n<img class='imageInList' src='images/games/"+game[1]+".jpg'/>\n<div id='remove-"+game[1]+"' class='ax_default primary_button removeButton'>\n<div class='removeButtonBgr'></div>\n<div class='text removeButtonText' style='visibility: visible;'>\n<p><span>Remove</span></p>\n</div>\n</div></div>\n ";
+				var htmlDiv = "\n<div class='ax_default image gameInList' style='left:"+220*i+"px;'>\n<a href='game_info_page.html?imgID="+game[1]+"'><img class='imageInList' src='images/games/"+game[1]+".jpg'/></a>\n<div id='remove-"+game[1]+"' class='ax_default primary_button removeButton'>\n<div class='removeButtonBgr'></div>\n<div class='text removeButtonText' style='visibility: visible;'>\n<p><span>Remove</span></p>\n</div>\n</div></div>\n ";
 				htmlCode += htmlDiv;
 			}
 			
