@@ -75,8 +75,6 @@ INSERT INTO paymentDetail() VALUES(2, "VISA", "6572132463132156", "12-21", 252);
 
 INSERT INTO usergamelist() VALUES(1,1);
 INSERT INTO usergamelist() VALUES(1,4);
-INSERT INTO usergamelist() VALUES(1,5);
-INSERT INTO usergamelist() VALUES(1,7);
 INSERT INTO usergamelist() VALUES(1,8);
 INSERT INTO usergamelist() VALUES(2,4);
 INSERT INTO usergamelist() VALUES(2,7);

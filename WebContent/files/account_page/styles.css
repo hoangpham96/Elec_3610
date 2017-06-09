@@ -2520,7 +2520,7 @@ body {
   padding-right:20px;
   padding-left:20px;
   width:180px;
-  height:240px;
+  height:360px;
 }
 .imgInList{
   position:absolute;
@@ -2531,4 +2531,57 @@ body {
 	position: absolute;
 	left:0px;
 	top:792px;
+}
+.removeButtonBgr {
+  position:absolute;
+  width:200px;
+  height:50px;
+  background:inherit;
+  background-color:rgba(22, 155, 213, 1);
+  border:none;
+  border-radius:5px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-size:20px;
+}
+.removeButton {
+  position:absolute;
+  width:200px;
+  height:50px;
+  font-size:20px;
+}
+.removeButtonText {
+  position:absolute;
+  top:16px;
+  width:200px;
+  word-wrap:break-word;
+}
+
+#removeAllBgr {
+  position:absolute;
+  width:300px;
+  height:75px;
+  background:inherit;
+  background-color:rgba(22, 155, 213, 1);
+  border:none;
+  border-radius:5px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+}
+#removeAll {
+  top: 330px;
+  left: 550px;
+  position:absolute;
+  width:200px;
+  height:50px;
+  font-size:20px;
+}
+#removeAllText {
+  position:absolute;
+  top:15px;
+  width:300px;
+  word-wrap:break-word;
+   font-size:40px;
 }
