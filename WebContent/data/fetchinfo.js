@@ -5,6 +5,8 @@ function removeQuotes(str){
 	}
 }
 
+
+
 $(document).ready(function(){
 	var fetched = false;
 	var userStr = getCookie("userDetail");
@@ -69,6 +71,8 @@ $(document).ready(function(){
 	
 	//Fetch info
 	else{
-		$.post("/Elec_3610/fetch", {uID: getCookie("uID")});
+		$.post("/Elec_3610/fetch", {uID: getCookie("uID")}, function(data){
+			location.reload();
+		});
 	}
 });
