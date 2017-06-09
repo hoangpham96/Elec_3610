@@ -9,17 +9,16 @@ $(document).ready(function(){
 		fetched = true;
 	}
 	
+	
 	if (fetched){
-
-		
 		//Remove the quotes at the beginning and end
 		userStr = removeQuotes(userStr);
 		gameStr = removeQuotes(gameStr);
 		paymentStr = removeQuotes(paymentStr);
 	
 		var user = userStr.split("-");
-		var games = gameStr.split(", ");
-		var payments = paymentStr.split(", ");
+		var games = gameStr.split("_ ");
+		var payments = paymentStr.split("_ ");
 		
 		//Remove empty sets
 		games.pop();
@@ -57,7 +56,6 @@ $(document).ready(function(){
 		}
 		
 		lastFour = mainPayment[1].substring(mainPayment[1].length-4,mainPayment[1].length);
-		console.log(lastFour);
 		$("#u1389").replaceWith("<div id='u1389' class='text' style='visibility: visible;'><p><span>XXXX - XXXX - XXXX - "+lastFour+"</span></p></div>");	
 		
 		if(games.length > 0){

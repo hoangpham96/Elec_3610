@@ -52,7 +52,7 @@ protected void doGet(HttpServletRequest request,
 			if (result2.getRow() > 0){
 				while(!result2.isAfterLast()){
 					String gameInfo = result2.getString(1)+"-"+result2.getString(2);
-					games+=gameInfo+", ";
+					games+=gameInfo+"_ ";
 					result2.next();
 				}
 			}
@@ -65,13 +65,13 @@ protected void doGet(HttpServletRequest request,
 			if (result3.getRow() > 0){
 				while(!result3.isAfterLast()){
 					String paymentInfo = result3.getString(1)+"-"+result3.getString(2)+"-"+result3.getString(3)+"-"+result3.getString(4);
-					payments+=paymentInfo+", ";
+					payments+=paymentInfo+"_ ";
 					result3.next();
 				}
 			}
 			result3.close();
 		}
-
+	
 		Cookie userDetail = new Cookie("userDetail",user);
 		Cookie gamesDetail = new Cookie("gameDetail",games);
 		Cookie paymentsDetail = new Cookie("paymentDetail",payments);
