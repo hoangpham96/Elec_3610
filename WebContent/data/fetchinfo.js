@@ -67,6 +67,18 @@ $(document).ready(function(){
 		lastFour = mainPayment[1].substring(mainPayment[1].length-4,mainPayment[1].length);
 		console.log(lastFour);
 		$("#u1389").replaceWith("<div id='u1389' class='text' style='visibility: visible;'><p><span>XXXX - XXXX - XXXX - "+lastFour+"</span></p></div>");	
+		
+		//Change game list
+		var htmlCode = "<div id='gameList'>\n";
+		
+		for(var i=0; i< games.length; i++){
+			var game = games[i].split('-');
+			var htmlDiv = "\n<div class='ax_default image gameInList' style='left:"+220*i+"px;'>\n<img class='imageInList' src='images/games/"+game[1]+".jpg'/>\n</div>\n";
+			htmlCode += htmlDiv;
+		}
+		htmlCode += "</div>";
+		console.log(htmlCode);
+		$("#gameList").replaceWith(htmlCode);
 	}
 	
 	//Fetch info
