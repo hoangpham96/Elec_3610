@@ -2802,6 +2802,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
+  visibility:hidden;
 }
 #bgrblur {
   position:absolute;
@@ -2809,6 +2810,7 @@ body {
   top:94px;
   width:1338px;
   height:1640px;
+  visibility:hidden;
 }
 #paymentBoxdiv {
   position:absolute;
@@ -2823,6 +2825,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
+  visibility:hidden;
 }
 #paymentBox {
   position:absolute;
@@ -2830,6 +2833,7 @@ body {
   top:325px;
   width:748px;
   height:437px;
+  visibility:hidden;
 }
 #paymentInfodiv {
   position:absolute;
@@ -2847,6 +2851,7 @@ body {
   font-family:'Arial Negreta', 'Arial Normal', 'Arial';
   font-weight:700;
   font-style:normal;
+  visibility:hidden;
 }
 #paymentInfo {
   position:absolute;
@@ -2857,6 +2862,7 @@ body {
   font-family:'Arial Negreta', 'Arial Normal', 'Arial';
   font-weight:700;
   font-style:normal;
+  visibility:hidden;
 }
 #paymentInfoText{
   position:absolute;
@@ -2864,6 +2870,7 @@ body {
   top:0px;
   width:316px;
   white-space:nowrap;
+  visibility:hidden;
 }
 #plusSignimg {
   position:absolute;
@@ -2871,6 +2878,7 @@ body {
   top:0px;
   width:50px;
   height:50px;
+  visibility:hidden;
 }
 #plusSign {
   position:absolute;
@@ -2878,6 +2886,7 @@ body {
   top:553px;
   width:50px;
   height:50px;
+  visibility:hidden;
 }
 #addNewdiv {
   position:absolute;
@@ -2893,6 +2902,7 @@ body {
   -webkit-box-shadow:none;
   box-shadow:none;
   font-size:20px;
+  visibility:hidden;
 }
 #addNew {
   position:absolute;
@@ -2901,6 +2911,7 @@ body {
   width:233px;
   height:40px;
   font-size:20px;
+  visibility:hidden;
 }
 #addNewText {
   position:absolute;
@@ -2908,6 +2919,7 @@ body {
   top:8px;
   width:229px;
   word-wrap:break-word;
+  visibility:hidden;
 }
 #paymentOKdiv {
   position:absolute;
@@ -2923,6 +2935,7 @@ body {
   -webkit-box-shadow:none;
   box-shadow:none;
   font-size:20px;
+  visibility:hidden;
 }
 #paymentOK {
   position:absolute;
@@ -2931,6 +2944,7 @@ body {
   width:140px;
   height:40px;
   font-size:20px;
+  visibility:hidden;
 }
 #paymentOKText {
   position:absolute;
@@ -2938,6 +2952,7 @@ body {
   top:8px;
   width:136px;
   word-wrap:break-word;
+  visibility:hidden;
 }
 .cardTypeimg {
   position:absolute;
@@ -2945,6 +2960,7 @@ body {
   top:0px;
   width:84px;
   height:55px;
+  visibility:hidden;
 }
 .cardType {
   position:absolute;
@@ -2952,6 +2968,7 @@ body {
   top:475px;
   width:84px;
   height:55px;
+  visibility:hidden;
 }
 .cardNamediv {
   position:absolute;
@@ -2967,6 +2984,7 @@ body {
   -webkit-box-shadow:none;
   box-shadow:none;
   font-size:20px;
+  visibility:hidden;
 }
 .cardName {
   position:absolute;
@@ -2975,6 +2993,7 @@ body {
   width:210px;
   height:89px;
   font-size:20px;
+  visibility:hidden;
 }
 .cardNameText {
   position:absolute;
@@ -2982,6 +3001,7 @@ body {
   top:32px;
   width:206px;
   word-wrap:break-word;
+  visibility:hidden;
 }
 .cardEditdiv {
   position:absolute;
@@ -2996,6 +3016,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
+  visibility:hidden;
 }
 .cardEdit {
   position:absolute;
@@ -3003,6 +3024,7 @@ body {
   top:497px;
   width:73px;
   height:24px;
+  visibility:hidden;
 }
 .cardEditText {
   position:absolute;
@@ -3010,6 +3032,7 @@ body {
   top:4px;
   width:69px;
   word-wrap:break-word;
+  visibility:hidden;
 }
 .cardRemovediv {
   position:absolute;
@@ -3024,6 +3047,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
+    visibility:hidden;
 }
 .cardRemove {
   position:absolute;
@@ -3031,6 +3055,7 @@ body {
   top:497px;
   width:73px;
   height:24px;
+   visibility:hidden;
 }
 .cardRemoveText {
   position:absolute;
@@ -3038,4 +3063,5 @@ body {
   top:4px;
   width:69px;
   word-wrap:break-word;
+  visibility:hidden;
 }
