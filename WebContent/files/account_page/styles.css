@@ -2787,3 +2787,255 @@ body {
   width:257px;
   word-wrap:break-word;
 }
+
+
+#bgrblurdiv {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:1338px;
+  height:1640px;
+  background:inherit;
+  background-color:rgba(215, 215, 215, 0.466666666666667);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+}
+#bgrblur {
+  position:absolute;
+  left:0px;
+  top:94px;
+  width:1338px;
+  height:1640px;
+}
+#paymentBoxdiv {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:748px;
+  height:437px;
+  background:inherit;
+  background-color:rgba(153, 153, 153, 1);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+}
+#paymentBox {
+  position:absolute;
+  left:226px;
+  top:325px;
+  width:748px;
+  height:437px;
+}
+#paymentInfodiv {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:316px;
+  height:37px;
+  background:inherit;
+  background-color:rgba(255, 255, 255, 0);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-family:'Arial Negreta', 'Arial Normal', 'Arial';
+  font-weight:700;
+  font-style:normal;
+}
+#paymentInfo {
+  position:absolute;
+  left:442px;
+  top:391px;
+  width:316px;
+  height:37px;
+  font-family:'Arial Negreta', 'Arial Normal', 'Arial';
+  font-weight:700;
+  font-style:normal;
+}
+#paymentInfoText{
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:316px;
+  white-space:nowrap;
+}
+#plusSignimg {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:50px;
+  height:50px;
+}
+#plusSign {
+  position:absolute;
+  left:392px;
+  top:553px;
+  width:50px;
+  height:50px;
+}
+#addNewdiv {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:233px;
+  height:40px;
+  background:inherit;
+  background-color:rgba(153, 153, 153, 1);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-size:20px;
+}
+#addNew {
+  position:absolute;
+  left:490px;
+  top:563px;
+  width:233px;
+  height:40px;
+  font-size:20px;
+}
+#addNewText {
+  position:absolute;
+  left:2px;
+  top:8px;
+  width:229px;
+  word-wrap:break-word;
+}
+#paymentOKdiv {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:140px;
+  height:40px;
+  background:inherit;
+  background-color:rgba(22, 155, 213, 1);
+  border:none;
+  border-radius:5px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-size:20px;
+}
+#paymentOK {
+  position:absolute;
+  left:530px;
+  top:660px;
+  width:140px;
+  height:40px;
+  font-size:20px;
+}
+#paymentOKText {
+  position:absolute;
+  left:2px;
+  top:8px;
+  width:136px;
+  word-wrap:break-word;
+}
+.cardTypeimg {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:84px;
+  height:55px;
+}
+.cardType {
+  position:absolute;
+  left:375px;
+  top:475px;
+  width:84px;
+  height:55px;
+}
+.cardNamediv {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:210px;
+  height:89px;
+  background:inherit;
+  background-color:rgba(153, 153, 153, 1);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-size:20px;
+}
+.cardName {
+  position:absolute;
+  left:501px;
+  top:464px;
+  width:210px;
+  height:89px;
+  font-size:20px;
+}
+.cardNameText {
+  position:absolute;
+  left:2px;
+  top:32px;
+  width:206px;
+  word-wrap:break-word;
+}
+.cardEditdiv {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:73px;
+  height:24px;
+  background:inherit;
+  background-color:rgba(22, 155, 213, 1);
+  border:none;
+  border-radius:5px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+}
+.cardEdit {
+  position:absolute;
+  left:731px;
+  top:497px;
+  width:73px;
+  height:24px;
+}
+.cardEditText {
+  position:absolute;
+  left:2px;
+  top:4px;
+  width:69px;
+  word-wrap:break-word;
+}
+.cardRemovediv {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:73px;
+  height:24px;
+  background:inherit;
+  background-color:rgba(22, 155, 213, 1);
+  border:none;
+  border-radius:5px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+}
+.cardRemove {
+  position:absolute;
+  left:814px;
+  top:497px;
+  width:73px;
+  height:24px;
+}
+.cardRemoveText {
+  position:absolute;
+  left:2px;
+  top:4px;
+  width:69px;
+  word-wrap:break-word;
+}
