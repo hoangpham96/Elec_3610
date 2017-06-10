@@ -5,7 +5,7 @@ $(document).ready(function(){
 	var gameStr = getCookie("gameDetail");
 	var paymentStr = getCookie("paymentDetail");
 	
-	if (userStr!=null){
+	if (userStr!=null && gameStr!=null && paymentStr!=null){
 		fetched = true;
 	}
 	

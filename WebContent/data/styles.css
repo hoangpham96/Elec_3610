@@ -19,6 +19,8 @@
 }
 .primary_button {
   color:#FFFFFF;
+  cursor: pointer; 
+  cursor: hand; 
 }
 .link_button {
   color:#169BD5;

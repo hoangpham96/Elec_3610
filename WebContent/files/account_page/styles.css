@@ -2549,13 +2549,13 @@ body {
   position:absolute;
   width:200px;
   height:50px;
-  font-size:20px;
 }
 .removeButtonText {
   position:absolute;
   top:16px;
   width:200px;
   word-wrap:break-word;
+   font-size:20px;
 }
 
 #removeAllBgr {
@@ -2574,8 +2574,8 @@ body {
   top: 330px;
   left: 550px;
   position:absolute;
-  width:200px;
-  height:50px;
+  width:300px;
+  height:75px;
   font-size:20px;
 }
 #removeAllText {

@@ -29,8 +29,9 @@ public class RemoveGameServlet extends HttpServlet {
 				Connection connection = DriverManager.getConnection(mysqlUrl,userInfo);
 				Statement stmt = connection.createStatement();
 				String sql = "";
+				System.out.println(gID);
 				
-				if(gID == "all"){
+				if(gID.equals("all")){
 					sql = "DELETE FROM usergamelist WHERE userID = "+uID+";";
 				}
 				else{
@@ -40,7 +41,8 @@ public class RemoveGameServlet extends HttpServlet {
 				try{
 					System.out.println(sql);
 					int completed = stmt.executeUpdate(sql);
-					System.out.println("Deleted records from the table...");
+					System.out.println(completed);
+
 					
 					//If the SQL doesn't succeed
 					if(completed == 0){
@@ -50,6 +52,7 @@ public class RemoveGameServlet extends HttpServlet {
 					}
 					//If the SQL succeeds
 					else{
+						System.out.println("Deleted records from the table...");
 					    PrintWriter out = response.getWriter();  
 					    response.setContentType("text");  
 					    out.println("true");
