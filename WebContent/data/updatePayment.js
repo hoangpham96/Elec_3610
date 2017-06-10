@@ -15,4 +15,17 @@ $(document).ready(function(){
 		$(".cardRemove").css("visibility","visible");
 		$("#paymentOK").css("visibility","visible");
 	});
+	
+	$("#paymentOK").click(function(){
+		$("#bgrblur").css("visibility","hidden");
+		$("#paymentBox").css("visibility","hidden");
+		$("#paymentInfo").css("visibility","hidden");
+		$("#plusSign").css("visibility","hidden");
+		$("#addNew").css("visibility","hidden");
+		$(".cardType").css("visibility","hidden");
+		$(".cardName").css("visibility","hidden");
+		$(".cardEdit").css("visibility","hidden");
+		$(".cardRemove").css("visibility","hidden");
+		$("#paymentOK").css("visibility","hidden");
+	});
 })	
