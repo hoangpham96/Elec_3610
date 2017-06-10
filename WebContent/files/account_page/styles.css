@@ -2515,7 +2515,38 @@ body {
   height:1px;
 }
 
-
+#u182_div {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:191px;
+  height:51px;
+  background:inherit;
+  background-color:rgba(39, 63, 82, 1);
+  border:none;
+  border-radius:5px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-size:28px;
+  text-decoration:underline;
+}
+#u182 {
+  position:absolute;
+  left:512px;
+  top:42px;
+  width:191px;
+  height:51px;
+  font-size:28px;
+  text-decoration:underline;
+}
+#u183 {
+  position:absolute;
+  left:2px;
+  top:9px;
+  width:187px;
+  word-wrap:break-word;
+}
 #u184_div {
   position:absolute;
   left:0px;
