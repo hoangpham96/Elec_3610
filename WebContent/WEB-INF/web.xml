@@ -55,4 +55,13 @@
 		<url-pattern>/save</url-pattern>
 	</servlet-mapping>
 	
+		<servlet>
+		<servlet-name>RemoveGame</servlet-name>
+		<servlet-class>elec3610.servlet.RemoveGameServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RemoveGame</servlet-name>
+		<url-pattern>/remove</url-pattern>
+	</servlet-mapping>
+	
 </web-app>

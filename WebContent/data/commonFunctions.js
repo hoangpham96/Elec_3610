@@ -20,7 +20,7 @@ function getCookie(name) {
 	  if (parts.length == 2) return parts.pop().split(";").shift();
 }
 
-function eraseCookie(name) {
+function deleteCookie(name) {
     createCookie(name, "", -1);
 }
 
