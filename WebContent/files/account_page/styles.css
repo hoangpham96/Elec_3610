@@ -2802,7 +2802,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  visibility:hidden;
+  visibility:inherit;
 }
 #bgrblur {
   position:absolute;
@@ -2825,7 +2825,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  visibility:hidden;
+  visibility:inherit;
 }
 #paymentBox {
   position:absolute;
@@ -2851,7 +2851,7 @@ body {
   font-family:'Arial Negreta', 'Arial Normal', 'Arial';
   font-weight:700;
   font-style:normal;
-  visibility:hidden;
+  visibility:inherit;
 }
 #paymentInfo {
   position:absolute;
@@ -2870,7 +2870,7 @@ body {
   top:0px;
   width:316px;
   white-space:nowrap;
-  visibility:hidden;
+  visibility:inherit;
 }
 #plusSignimg {
   position:absolute;
@@ -2878,7 +2878,7 @@ body {
   top:0px;
   width:50px;
   height:50px;
-  visibility:hidden;
+  visibility:inherit;
 }
 #plusSign {
   position:absolute;
@@ -2902,7 +2902,7 @@ body {
   -webkit-box-shadow:none;
   box-shadow:none;
   font-size:20px;
-  visibility:hidden;
+  visibility:inherit;
 }
 #addNew {
   position:absolute;
@@ -2919,7 +2919,7 @@ body {
   top:8px;
   width:229px;
   word-wrap:break-word;
-  visibility:hidden;
+  visibility:inherit;
 }
 #paymentOKdiv {
   position:absolute;
@@ -2935,7 +2935,7 @@ body {
   -webkit-box-shadow:none;
   box-shadow:none;
   font-size:20px;
-  visibility:hidden;
+  visibility:inherit;
 }
 #paymentOK {
   position:absolute;
@@ -2952,7 +2952,7 @@ body {
   top:8px;
   width:136px;
   word-wrap:break-word;
-  visibility:hidden;
+  visibility:inherit;
 }
 .cardTypeimg {
   position:absolute;
@@ -2960,7 +2960,7 @@ body {
   top:0px;
   width:84px;
   height:55px;
-  visibility:hidden;
+  visibility:inherit;
 }
 .cardType {
   position:absolute;
@@ -2984,7 +2984,7 @@ body {
   -webkit-box-shadow:none;
   box-shadow:none;
   font-size:20px;
-  visibility:hidden;
+  visibility:inherit;
 }
 .cardName {
   position:absolute;
@@ -3001,7 +3001,7 @@ body {
   top:32px;
   width:206px;
   word-wrap:break-word;
-  visibility:hidden;
+  visibility:inherit;
 }
 .cardEditdiv {
   position:absolute;
@@ -3016,7 +3016,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  visibility:hidden;
+  visibility:inherit;
 }
 .cardEdit {
   position:absolute;
@@ -3032,7 +3032,7 @@ body {
   top:4px;
   width:69px;
   word-wrap:break-word;
-  visibility:hidden;
+  visibility:inherit;
 }
 .cardRemovediv {
   position:absolute;
@@ -3047,7 +3047,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-    visibility:hidden;
+    visibility:inherit;
 }
 .cardRemove {
   position:absolute;
@@ -3063,5 +3063,5 @@ body {
   top:4px;
   width:69px;
   word-wrap:break-word;
-  visibility:hidden;
+  visibility:inherit;
 }
