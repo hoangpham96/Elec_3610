@@ -41,8 +41,8 @@ public class RegisterServlet extends HttpServlet {
 				    PrintWriter out = response.getWriter();  
 				    response.setContentType("text/html");  
 				    out.println("<script type=\"text/javascript\">");
-				    out.println("alert('Register successful! Please enter your login details again to log in.')"); 
-				    out.println("window.location = 'main_page.html';");  
+				    out.println("alert('Register successful! Logging in...')"); 
+				    out.println("window.location = 'login?username="+username+"&password="+password+"';");  
 				    out.println("</script>");
 				}
 				catch (Exception e) {

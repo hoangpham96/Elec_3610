@@ -1,6 +1,6 @@
 $(document).ready(function(){		
    $("#regSubmit").click(function(){
-	   var pass = false;
+	   var pass = true;
 		var username = $("#rf1textbox").val();
 		var password = $("#rf2textbox").val();
 		var firstname = $("#rf3textbox").val();
@@ -21,7 +21,7 @@ $(document).ready(function(){
 		   pass = false;
 	   }
 	   
-	   
+
 	   if (pass){
    			$("#registerInput").submit();
 	   }

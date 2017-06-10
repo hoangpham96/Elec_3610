@@ -9,7 +9,6 @@ $(document).ready(function(){
 		fetched = true;
 	}
 	
-	
 	if (fetched){
 		//Remove the quotes at the beginning and end
 		userStr = removeQuotes(userStr);
@@ -39,27 +38,29 @@ $(document).ready(function(){
 		
 		$("#u1323").replaceWith("<div id='u1323' class='text' style='visibility: visible;'><p><span>"+user[0]+", "+gender+"</span></p><p><span>"+user[2]+"</span></p><p><span>"+user[3]+"</span></p></div>");
 		
-		//Replacing card info
-		var mainPayment = payments[0].split("-");
-		switch(mainPayment[0]){
-			case "AMEX":
-				$("#u1386_img").replaceWith("<img id='u1386_img' class='img' src='images/cards/amex.png'>");
-				break;
-			case "VISA":
-				$("#u1386_img").replaceWith("<img id='u1386_img' class='img' src='images/cards/visa.png'>");
-				break;
-			case "MAST":
-				$("#u1386_img").replaceWith("<img id='u1386_img' class='img' src='images/cards/mastercard.png'>");
-				break;
-			default:
-				$("#u1386_img").replaceWith("<img id='u1386_img' class='img' src='images/cards/mastercard.png'>");
+		//Replacing card info if there's a card
+		if(payments.length > 0){
+			var mainPayment = payments[0].split("-");
+			switch(mainPayment[0]){
+				case "AMEX":
+					$("#u1386_img").replaceWith("<img id='u1386_img' class='img' src='images/cards/amex.png'>");
+					break;
+				case "VISA":
+					$("#u1386_img").replaceWith("<img id='u1386_img' class='img' src='images/cards/visa.png'>");
+					break;
+				case "MAST":
+					$("#u1386_img").replaceWith("<img id='u1386_img' class='img' src='images/cards/mastercard.png'>");
+					break;
+				default:
+					$("#u1386_img").replaceWith("<img id='u1386_img' class='img' src='images/cards/mastercard.png'>");
+			}
+			
+			lastFour = mainPayment[1].substring(mainPayment[1].length-4,mainPayment[1].length);
+			$("#u1389").replaceWith("<div id='u1389' class='text' style='visibility: visible;'><p><span>XXXX - XXXX - XXXX - "+lastFour+"</span></p></div>");	
 		}
 		
-		lastFour = mainPayment[1].substring(mainPayment[1].length-4,mainPayment[1].length);
-		$("#u1389").replaceWith("<div id='u1389' class='text' style='visibility: visible;'><p><span>XXXX - XXXX - XXXX - "+lastFour+"</span></p></div>");	
-		
+		//Change game list
 		if(games.length > 0){
-			//Change game list
 			var htmlCode = "<div id='gameList'>\n";
 			
 			//Add remove button
