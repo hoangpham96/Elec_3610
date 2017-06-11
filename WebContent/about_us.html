@@ -42,6 +42,10 @@
     <script src="resources/scripts/axure/legacy.js"></script>
     <script src="resources/scripts/axure/viewer.js"></script>
     <script src="resources/scripts/axure/math.js"></script>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="data/loginSect.css" type="text/css" rel="stylesheet"/>
+    <script src="data/commonFunctions.js"></script>
+    <script src="data/login.js"></script>
     <script type="text/javascript">
       $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
       $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
@@ -344,33 +348,59 @@
           <p><span></span></p>
         </div>
       </div>
+      
+     <div id="loginSect">
 
-      <!-- Unnamed (Shape) -->
-      <div id="u334" class="ax_default icon">
-        <img id="u334_img" class="img " src="images/customer_service/u248.png"/>
-        <!-- Unnamed () -->
-        <div id="u335" class="text" style="display: none; visibility: hidden">
-          <p><span></span></p>
-        </div>
+  <!-- Username Text -->
+  <div id="u44" class="ax_default box_2">
+    <div id="u44_div" class=""></div>
+    <!-- Unnamed () -->
+    <div id="u45" class="text" style="visibility: visible;">
+      <p><span>Username</span></p>
+    </div>
+  </div>
+  
+  <!-- Password text -->
+  <div id="u46" class="ax_default box_2">
+    <div id="u46_div" class=""></div>
+    <!-- Unnamed () -->
+    <div id="u47" class="text" style="visibility: visible;">
+      <p><span>Password</span></p>
+    </div>
+  </div>
+  
+  <form id="loginInput" action="login" method="post">
+      <!-- Username input -->
+      <div id="u186" class="ax_default text_field">
+        <input id="u186_input" type="text" value="" name="username"/>
       </div>
+      
+      <!-- Password Input -->
+      <div id="u187" class="ax_default text_field">
+        <input id="u187_input" type="password" value="" name="password"/>
+      </div>
+  </form>
+  
+   <!-- Login button -->
+  <div id="u184" class="ax_default primary_button">
+    <div id="u184_div" class=""></div>
+    <!-- Unnamed () -->
+    <div id="u185" class="text" style="visibility: visible;">
+      <p><span>LOGIN</span></p>
+    </div>
+  </div>
 
-      <!-- Unnamed (Rectangle) -->
-      <div id="u336" class="ax_default heading_2">
-        <div id="u336_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u337" class="text" style="visibility: visible;">
-          <p><span>User name</span></p>
-        </div>
-      </div>
+  <!-- Register -->
+  <div id="u182" class="ax_default primary_button">
+    <div id="u182_div" class=""></div>
+    <!-- Unnamed () -->
+    <div id="u183" class="text" style="visibility: visible;">
+      <p><span style="text-decoration:underline;"><a href="register.html">Register</a></span></p>
+    </div>
+  </div>
+  
+</div>
 
-      <!-- Unnamed (Shape) -->
-      <div id="u338" class="ax_default icon">
-        <img id="u338_img" class="img " src="images/customer_service/u252.png"/>
-        <!-- Unnamed () -->
-        <div id="u339" class="text" style="display: none; visibility: hidden">
-          <p><span></span></p>
-        </div>
-      </div>
 
       <!-- Unnamed (Horizontal Line) -->
       <div id="u340" class="ax_default line">
@@ -462,14 +492,7 @@
       <!-- Unnamed (Rectangle) [reference page] -->
       <div id="u354_ref" class="reference_page"></div>
 
-      <!-- Unnamed (Rectangle) -->
-      <div id="u356" class="ax_default primary_button">
-        <div id="u356_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u357" class="text" style="visibility: visible;">
-          <p><span style="text-decoration:underline;">Register</span></p>
-        </div>
-      </div>
+   
     </div>
   </body>
 </html>
