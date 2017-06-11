@@ -91,4 +91,13 @@
 		<url-pattern>/editPayment</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>EditUser</servlet-name>
+		<servlet-class>elec3610.servlet.EditUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditUser</servlet-name>
+		<url-pattern>/editUser</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
