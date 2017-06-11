@@ -26,7 +26,7 @@ $(document).ready(function(){
 			}
 			lastFour = payment[1].substring(payment[1].length-4,payment[1].length);
 
-			var htmlDiv = "\n<div id='payment'><!-- For one payment -->\n" +
+			var htmlDiv = "\n<div class='payment'><!-- For one payment -->\n" +
 						  "\n<div  class='ax_default icon cardType'>\n" +
 						  "<img class='img cardTypeimg' src='images/cards/"+cardTypeName+".png'/>\n" +
 						  "</div>\n" +
@@ -44,6 +44,7 @@ $(document).ready(function(){
 						  "<div class='text cardRemoveText'>\n" +
 				          "<p><span>REMOVE</span></p>\n" +
 				          "</div>\n"+
+				          "</div>\n"+
 				          "</div>\n";
 			htmlCode += htmlDiv;
 		}			      
@@ -57,12 +58,8 @@ $(document).ready(function(){
 		$("#bgrblur").css("visibility","visible");
 		$("#paymentBox").css("visibility","visible");
 		$("#boxHeader").css("visibility","visible");
-		$("#plusSign").css("visibility","visible");
-		$("#addNew").css("visibility","visible");
-		$(".cardType").css("visibility","visible");
-		$(".cardName").css("visibility","visible");
-		$(".cardEdit").css("visibility","visible");
-		$(".cardRemove").css("visibility","visible");
+		$("#addPayment").css("visibility","visible");
+		$(".payment").css("visibility","visible");
 		$("#paymentOK").css("visibility","visible");
 		
 		//Change card to real card
@@ -75,13 +72,9 @@ $(document).ready(function(){
 		$("#paymentOK").click(function(){
 			$("#bgrblur").css("visibility","hidden");
 			$("#paymentBox").css("visibility","hidden");
-			$("#paymentInfo").css("visibility","hidden");
-			$("#plusSign").css("visibility","hidden");
-			$("#addNew").css("visibility","hidden");
-			$(".cardType").css("visibility","hidden");
-			$(".cardName").css("visibility","hidden");
-			$(".cardEdit").css("visibility","hidden");
-			$(".cardRemove").css("visibility","hidden");
+			$("#boxHeader").css("visibility","hidden");
+			$("#addPayment").css("visibility","hidden");
+			$(".payment").css("visibility","hidden");
 			$("#paymentOK").css("visibility","hidden");
 		});
 	});

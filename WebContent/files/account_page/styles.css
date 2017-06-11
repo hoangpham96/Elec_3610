@@ -2812,6 +2812,8 @@ body {
   height:1640px;
   visibility:hidden;
 }
+#centerBox{
+}
 #paymentBoxdiv {
   position:absolute;
   left:0px;
@@ -2872,6 +2874,9 @@ body {
   white-space:nowrap;
   visibility:inherit;
 }
+#addPayment{
+	visibility:hidden;
+}
 #plusSignimg {
   position:absolute;
   left:0px;
@@ -2886,7 +2891,7 @@ body {
   top:553px;
   width:50px;
   height:50px;
-  visibility:hidden;
+  visibility:inherit;
 }
 #addNewdiv {
   position:absolute;
@@ -2911,7 +2916,7 @@ body {
   width:233px;
   height:40px;
   font-size:20px;
-  visibility:hidden;
+  visibility:inherit;
 }
 #addNewText {
   position:absolute;
@@ -2954,6 +2959,9 @@ body {
   word-wrap:break-word;
   visibility:inherit;
 }
+.payment{
+	visibility:hidden;'
+}
 .cardTypeimg {
   position:absolute;
   left:0px;
@@ -2968,7 +2976,7 @@ body {
   top:475px;
   width:84px;
   height:55px;
-  visibility:hidden;
+  visibility:inherit;
 }
 .cardNamediv {
   position:absolute;
@@ -2993,7 +3001,7 @@ body {
   width:210px;
   height:89px;
   font-size:20px;
-  visibility:hidden;
+  visibility:inherit;
 }
 .cardNameText {
   position:absolute;
@@ -3024,7 +3032,7 @@ body {
   top:497px;
   width:73px;
   height:24px;
-  visibility:hidden;
+  visibility:inherit;
 }
 .cardEditText {
   position:absolute;
@@ -3055,7 +3063,7 @@ body {
   top:497px;
   width:73px;
   height:24px;
-   visibility:hidden;
+   visibility:inherit;
 }
 .cardRemoveText {
   position:absolute;
