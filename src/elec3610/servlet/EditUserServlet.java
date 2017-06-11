@@ -31,32 +31,36 @@ public class EditUserServlet extends HttpServlet {
 				Connection connection = DriverManager.getConnection(mysqlUrl,userInfo);
 				Statement stmt = connection.createStatement();
 				
+				String[] setStrings = {"","","",""};
 				String setString = "";
-				if(!first.equals(null)){
-					setString += "firstname = '"+first+"'";
+				if(!first.equals("")){
+					setStrings[0] = "firstname = '"+first+"'";
 				}
-				if(!setString.equals("")){
-					setString += ", ";
+				if(!last.equals("")){
+					setStrings[1] = "lastname = '"+last+"'";
 				}
-				if(!last.equals(null)){
-					setString += "lastname = '"+last+"'";
+				if(!pw.equals("")){
+					setStrings[2] = "password = '"+pw+"'";
 				}
-				if(!setString.equals("")){
-					setString += ", ";
+				if(!em.equals("")){
+					setStrings[3] = "email = '"+em+"'";
 				}
-				if(!pw.equals(null)){
-					setString += "password = '"+pw+"'";
-				}
-				if(!setString.equals("")){
-					setString += ", ";
-				}
-				if(!em.equals(null)){
-					setString += "email = '"+em+"'";
-				}
-				System.out.println(setString);
 				
-				String sql = "UPDATE user SET "+setString+" WHERE userid = '"+uID+"';";
+				for(int i = 0; i < setStrings.length; i++){
+					if(!setStrings[i].equals("")){
+						setString += setStrings[i];
+						setString += ", ";
+					}
+				}
+				
+				if(setString.charAt(setString.length()-1)==' '){
+					setString = setString.substring(0, setString.length()-2);
+				}
+				
+				
+				String sql = "UPDATE user SET "+setString+" WHERE id = '"+uID+"';";
 				try{
+					System.out.println(sql);
 					int completed = stmt.executeUpdate(sql);
 
 					//If the SQL doesn't succeed

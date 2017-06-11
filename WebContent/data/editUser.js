@@ -11,15 +11,20 @@ $(document).ready(function(){
 		console.log(lastname);
 		console.log(email);
 		
-		$.post("/Elec_3610/editUser", {uID: user, first: firstname, last: lastname, pw:password, em: email}, function(data){
-			if(data.includes("true")){
-				alert("Sucessfully changed details");
-				deleteCookie("userDetail");
-				location.reload()
-			}
-			else{
-				alert("There was an issue editing your details")
-			}
-		})
+		if(password == '' && firstname == '' && lastname == '' && lastname == ''){
+			alert("Please enter at least 1 detail");
+		}
+		else{
+			$.post("/Elec_3610/editUser", {uID: user, first: firstname, last: lastname, pw:password, em: email}, function(data){
+				if(data.includes("true")){
+					alert("Sucessfully changed details");
+					deleteCookie("userDetail");
+					location.reload()
+				}
+				else{
+					alert("There was an issue editing your details")
+				}
+			})
+		}
    });
 });
