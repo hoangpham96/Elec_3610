@@ -1,4 +1,4 @@
-﻿body {
+body {
   margin:0px;
   background-image:none;
   position:static;
@@ -1822,5 +1822,75 @@
   left:2px;
   top:8px;
   width:96px;
+  word-wrap:break-word;
+}
+#map{
+	z-index: 100;
+	position: absolute;
+	top: 360px;
+	left:600px; 
+	width:600px;
+	height:450px;
+}
+
+#contactDetaildiv {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:inherit;
+  height:inherit;
+  background:inherit;
+  background-color:rgba(242, 242, 242, 1);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-size:20px;
+  text-align:left;
+}
+#contactDetail {
+  position:absolute;
+  left:114px;
+  top:265px;
+  width:400px;
+  height:600px;
+  font-size:20px;
+  text-align:left;
+}
+#contactDetailText {
+  position:absolute;
+  left:2px;
+  top:51px;
+  width:inherit;
+  word-wrap:break-word;
+}
+
+#contactMapdiv {
+  position:absolute;
+  width:inherit;
+  height:inherit;
+  background:inherit;
+  background-color:rgba(242, 242, 242, 1);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-size:20px;
+  text-align:left;
+}
+#contactMap {
+  position:absolute;
+  left:600px;
+  top:265px;
+  width:200px;
+  height:50px;
+  text-align:left;
+}
+#contactMapText {
+  position:absolute;
+  top:50px;
+  width:inherit;
   word-wrap:break-word;
 }
