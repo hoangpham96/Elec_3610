@@ -38,7 +38,7 @@ $(document).ready(function(){
 		
 		$("#u1323").replaceWith("<div id='u1323' class='text' style='visibility: visible;'><p><span>"+user[0]+", "+gender+"</span></p><p><span>"+user[2]+"</span></p><p><span>"+user[3]+"</span></p></div>");
 		
-		//Replacing card info if there's a card
+		//Replacing card info with main card if there's a card
 		if(payments.length > 0){
 			var mainPayment = payments[0].split("-");
 			switch(mainPayment[0]){

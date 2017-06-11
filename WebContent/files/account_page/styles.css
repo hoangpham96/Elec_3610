@@ -2835,7 +2835,7 @@ body {
   height:437px;
   visibility:hidden;
 }
-#paymentInfodiv {
+#boxHeaderdiv {
   position:absolute;
   left:0px;
   top:0px;
@@ -2853,7 +2853,7 @@ body {
   font-style:normal;
   visibility:inherit;
 }
-#paymentInfo {
+#boxHeader {
   position:absolute;
   left:442px;
   top:391px;
@@ -2864,7 +2864,7 @@ body {
   font-style:normal;
   visibility:hidden;
 }
-#paymentInfoText{
+#boxHeaderText{
   position:absolute;
   left:0px;
   top:0px;
