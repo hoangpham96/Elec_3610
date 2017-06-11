@@ -35,7 +35,6 @@ public class AddPaymentServlet extends HttpServlet {
 						+"', '"+ccv+"');";
 				try{
 					int completed = stmt.executeUpdate(sql);
-					System.out.println(completed);
 
 					//If the SQL doesn't succeed
 					if(completed == 0){
@@ -51,7 +50,6 @@ public class AddPaymentServlet extends HttpServlet {
 					}
 				}
 				catch (Exception e) {
-					System.out.println(e.getMessage());
 					PrintWriter out = response.getWriter();  
 				    response.setContentType("text");  
 				    out.println("false");

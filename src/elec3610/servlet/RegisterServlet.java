@@ -36,7 +36,6 @@ public class RegisterServlet extends HttpServlet {
 						+"', '"+lastname+"', '"+gender+"', '"+address+"', '"+email+"');";
 				try{
 					stmt.executeUpdate(sql);
-					System.out.println("Inserted records into the table...");
 					
 				    PrintWriter out = response.getWriter();  
 				    response.setContentType("text/html");  

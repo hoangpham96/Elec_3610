@@ -34,7 +34,6 @@ public class EditPaymentServlet extends HttpServlet {
 				
 				String sql = "UPDATE paymentDetail SET paymentType = '"+type+"', cardNum = '"+num+"', cardExp = '"+exp+"', cardCCV = '"+ccv+"' WHERE userid = '"+uID+"' AND cardNum = '"+oldNum+"';";
 				try{
-					System.out.println(sql);
 					int completed = stmt.executeUpdate(sql);
 
 					//If the SQL doesn't succeed
