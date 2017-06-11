@@ -33,7 +33,7 @@ CREATE TABLE paymentDetail(
 	FOREIGN KEY (userid)
         REFERENCES user(id)
         ON DELETE CASCADE,
-    CONSTRAINT unique_card_for_user UNIQUE (userID,paymentType,cardNum,cardExp,cardCCV)
+    CONSTRAINT unique_card_for_user UNIQUE (userID,paymentType,cardNum)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 CREATE TABLE usergamelist (
