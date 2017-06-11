@@ -79,7 +79,7 @@ $(document).ready(function(){
 			$("#addPayment").css("visibility","hidden");
 			$(".payment").css("visibility","hidden");
 			$("#paymentOK").css("visibility","hidden");
-			$("#paymentBox").css("height","320px");
+			$("#centerBox").css("height","320px");
 			$("#addpaymentOK").css("visibility","visible");
 			$("#boxHeader").css({"top": "30px", "left": "260px"});
 			$("#boxHeaderText").replaceWith("<div id='boxHeaderText' class='text'><p><span>Add new card</span></p></div>");
@@ -113,7 +113,25 @@ $(document).ready(function(){
 					$.post("/Elec_3610/addPayment", {uID: user, type: cardType, num:cardNum, exp: cardExp, ccv:cardCCV}, function(data){
 			   			if(data.includes("true")){
 			   				alert("Card has been added.");
+			   				$("#addPayment").css("visibility","visible");
+			   				$("#paymentOK").css("visibility","visible");
+			   				$("#addpaymentOK").css("visibility","hidden");
+			   				$("#boxHeader").css({"top": "66px", "left": "216px"});
+			   				$("#boxHeaderText").replaceWith("<div id='boxHeaderText' class='text'><p><span>Payment Information</span></p></div>");
+			   				$("#addPaymentForm").css("visibility","hidden");
+			   				$("#addPaymentInput").css("visibility","hidden");
+			   				
+			   				payments.push(cardType+"-"+cardNum+"-"+cardExp+"-"+cardCCV);
+			   				var paymentStr = "";
+			   				for(var i = 0; i < payments.length; i++){
+			   					paymentStr += payments[i] + "_ ";
+			   				}
+			   				console.log(paymentStr)
+			   				deleteCookie("paymentDetail");
+			   				createCookie("paymentDetail",paymentStr,1);
+			   				console.log(getCookie("paymentDetail"));
 			   				reloadPayments(payments);
+			   				$(".payment").css("visibility","visible");
 			   			}
 			   			else{
 			   				alert("We had some trouble adding your card. Please try again");

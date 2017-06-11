@@ -11,7 +11,7 @@ var createCookie = function(name, value, days) {
     else {
         expires = "";
     }
-    document.cookie = name + "=" + value + expires + "; path=/";
+    document.cookie = name + "=" + value + expires + "; path=/Elec_3610";
 }
 
 function getCookie(name) {

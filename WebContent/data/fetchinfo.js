@@ -11,9 +11,15 @@ $(document).ready(function(){
 	
 	if (fetched){
 		//Remove the quotes at the beginning and end
-		userStr = removeQuotes(userStr);
-		gameStr = removeQuotes(gameStr);
-		paymentStr = removeQuotes(paymentStr);
+		if(userStr[0] == "\""){
+			userStr = removeQuotes(userStr);
+		}
+		if(gameStr[0] == "\""){
+			gameStr = removeQuotes(gameStr);
+		}
+		if(paymentStr[0] == "\""){
+			paymentStr = removeQuotes(paymentStr);
+		}
 	
 		var user = userStr.split("-");
 		var games = gameStr.split("_ ");
