@@ -7,9 +7,13 @@ $(document).ready(function(){
 		var lastname = $("#rf4textbox").val();
 		var address = $("#rf6textbox").val();
 		var email = $("#rf7textbox").val();
+		var maleGender =  $("#rfradio1").val();
+		var femaleGender = $("#rfradio2").val();
+
+		
 	   	   
 	   if (username.length == 0 || password.length == 0 ||firstname.length == 0 ||lastname.length == 0){
-		   alert("Please enter your required details.\nNote: Required details are marked with *");
+		   alert("Please enter your required details.\nNote: Required details are marked with *.");
 		   pass = false;
 	   }
 	   else if (username.length < 4 || password.length < 4){
@@ -17,7 +21,11 @@ $(document).ready(function(){
 		   pass = false;
 	   }
 	   else if (!email.includes('@')){
-		   alert("Invalid email.\n Email must include @ sign");
+		   alert("Invalid email.\n Email must include @ sign.");
+		   pass = false;
+	   }
+	   else if(!$('#rfradio1').is(':checked') && !$('#rfradio2').is(':checked')){
+		   alert("Please select a gender.");
 		   pass = false;
 	   }
 	   
