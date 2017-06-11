@@ -55,13 +55,22 @@
 		<url-pattern>/saveGame</url-pattern>
 	</servlet-mapping>
 	
-		<servlet>
+	<servlet>
 		<servlet-name>RemoveGame</servlet-name>
 		<servlet-class>elec3610.servlet.RemoveGameServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>RemoveGame</servlet-name>
 		<url-pattern>/removeGame</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AddPayment</servlet-name>
+		<servlet-class>elec3610.servlet.AddPaymentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddPayment</servlet-name>
+		<url-pattern>/addPayment</url-pattern>
 	</servlet-mapping>
 	
 </web-app>

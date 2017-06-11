@@ -940,21 +940,55 @@
 		      
 		   <form id="addPaymentInput">
    		      <div id="rf1text" class="ax_default box_2">
-		          <input class="rftext" id="rf1textbox" type="text" value="" name="username" required></input>
-		      </div>
+				  <input id="rf1textbox" list="cardTypes">
+					  <datalist id="cardTypes">
+					    <option value="AMEX">
+					    <option value="MAST">
+					    <option value="VISA">
+					  </datalist> 
+				</div>
 		      
       		  <div id="rf2text" class="ax_default box_2">
-		          <input class="rftext" id="rf2textbox" type="password" value="" name="password" required></input>
+		          <input class="rftext" id="rf2textbox" value=""></input>
 		      </div>
 		      
-          	  <div id="rf3text" class="ax_default box_2">
-		          <input class="rftext" id="rf3textbox" type="text" value="" name="firstname" required></input>
-		      </div>
+          	  <div id="rf31text" class="ax_default box_2">
+				  <input id="rf31textbox" list="months">
+					  <datalist id="months">
+					    <option value="01">
+					    <option value="02">
+					    <option value="03">
+					    <option value="04">
+					    <option value="05">
+					    <option value="06">
+					    <option value="07">
+					    <option value="08">
+					    <option value="09">
+					    <option value="10">
+					    <option value="11">
+					    <option value="12">    
+					  </datalist> 
+				</div>
 		      
-		      <div id="rf4text" class="ax_default box_2">
-		          <input class="rftext" id="rf4textbox" type="text" value="" name="lastname" required></input>
-		      </div>
+		      <div id="rf32text" class="ax_default box_2">
+				  <input id="rf32textbox" list="years">
+					  <datalist id="years">
+					    <option value="17">
+					    <option value="18">
+					    <option value="19">
+					    <option value="20">
+					    <option value="21">
+					    <option value="22">
+					    <option value="23">
+					    <option value="24">
+					    <option value="25">
+					  </datalist> 
+				</div>
 		      
+      		  <div id="rf4text" class="ax_default box_2">
+		          <input id="rf4textbox" value=""></input>
+		      </div>
+			      
 
 	      </form>
 	    </div>

@@ -11,16 +11,18 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-public class RemoveGameServlet extends HttpServlet {
+public class AddPaymentServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request,
 						HttpServletResponse response) throws ServletException {
 		String uID = request.getParameter("uID");
-		String gID = request.getParameter("gID");
-		
+		String type = request.getParameter("type");
+		String num = request.getParameter("num");
+		String exp = request.getParameter("exp");
+		String ccv = request.getParameter("ccv");
+
 		try {		
-			if (uID != null && gID != null){
+			if (type != null && num != null){
 				Class.forName("com.mysql.jdbc.Driver");
 				String mysqlUrl = "jdbc:mysql://localhost:3306/elec3610";
 				Properties userInfo = new Properties();
@@ -28,44 +30,24 @@ public class RemoveGameServlet extends HttpServlet {
 				userInfo.put("password", "root");
 				Connection connection = DriverManager.getConnection(mysqlUrl,userInfo);
 				Statement stmt = connection.createStatement();
-				String sql = "";
-				System.out.println(gID);
 				
-				if(gID.equals("all")){
-					sql = "DELETE FROM usergamelist WHERE userID = "+uID+";";
-				}
-				else{
-					sql = "DELETE FROM usergamelist WHERE userID = "+uID+" AND gameID = "+gID+";";
-				}
-							
+				String sql = "INSERT INTO paymentDetail() VALUES('"+uID+"', '"+type+"', '"+num+"', '"+exp
+						+"', '"+ccv+"');";
 				try{
-					int completed = stmt.executeUpdate(sql);
+					stmt.executeUpdate(sql);
+					PrintWriter out = response.getWriter();  
+				    response.setContentType("text");  
+				    out.println("true");
 
-					
-					//If the SQL doesn't succeed
-					if(completed == 0){
-					    PrintWriter out = response.getWriter();  
-					    response.setContentType("text");  
-					    out.println("false");
-					}
-					//If the SQL succeeds
-					else{
-						System.out.println("Deleted records from the table...");
-					    PrintWriter out = response.getWriter();  
-					    response.setContentType("text");  
-					    out.println("true");
-					}
 				}
-				//If there's any error with the SQL
 				catch (Exception e) {
-				    PrintWriter out = response.getWriter();  
+					PrintWriter out = response.getWriter();  
 				    response.setContentType("text");  
 				    out.println("false");
 				}
 			}
 			else {
-				//If the input is missing
-			    PrintWriter out = response.getWriter();  	
+				PrintWriter out = response.getWriter();  
 			    response.setContentType("text");  
 			    out.println("false");
 			}

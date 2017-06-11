@@ -87,11 +87,39 @@ $(document).ready(function(){
 			$("#addPaymentInput").css("visibility","visible");
 			
 			$("#addpaymentOK").click(function(){
+				var pass = true;
+			
 				var cardType = $("#rf1textbox").val();
 				var cardNum = $("#rf2textbox").val();
-				var cardExpiry = $("#rf3textbox").val();
+				var cardExp = $("#rf31textbox").val()+'-'+$("#rf32textbox").val();
 				var cardCCV = $("#rf4textbox").val();
 				console.log(cardType);
+				console.log(cardNum);
+				console.log(cardExp);
+				console.log(cardCCV);
+				
+				//Filter
+				if(cardType == null || cardNum == null || cardExp == null || cardCCV == null){
+					alert("Please enter all details.");
+					pass = false;
+				}
+				else if (cardCCV.length > 3) {
+					alert("Please enter the month AND the year of the card's expiry");
+					pass = false;
+				}
+				
+				if(pass){
+					var user = getCookie("uID");
+					$.post("/Elec_3610/addPayment", {uID: user, type: cardType, num:cardNum, exp: cardExp, ccv:cardCCV}, function(data){
+			   			if(data.includes("true")){
+			   				alert("Card has been added.");
+			   				reloadPayments(payments);
+			   			}
+			   			else{
+			   				alert("We had some trouble adding your card. Please try again");
+			   			}
+			   		});
+				}
 			})
 		})
 		
