@@ -3086,3 +3086,118 @@ body {
   word-wrap:break-word;
   visibility:inherit;
 }
+#addpaymentOKdiv {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:140px;
+  height:40px;
+  background:inherit;
+  background-color:rgba(22, 155, 213, 1);
+  border:none;
+  border-radius:5px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-size:20px;
+  visibility:inherit;
+}
+#addpaymentOK {
+  position:absolute;
+  left:300px;
+  top:265px;
+  width:140px;
+  height:40px;
+  font-size:20px;
+  visibility:hidden;
+}
+#addpaymentOKText {
+  position:absolute;
+  left:2px;
+  top:8px;
+  width:136px;
+  word-wrap:break-word;
+  visibility:inherit;
+}
+
+#addPaymentForm{
+  position:absolute;
+  left:20px;
+  top:100px;
+  visibility:hidden;
+}
+#addPaymentInput{
+  position:absolute;
+  left:175px;
+  visibility:hidden;
+}
+#rf1 {
+  position:absolute;
+  width:200px;
+  height:30px;
+  font-size:20px;
+  visibility:inherit;
+}
+#rf2 {
+  position:absolute;
+  top:40px;
+  width:200px;
+  height:30px;
+  font-size:20px;
+  visibility:inherit;
+}
+#rf3 {
+  position:absolute;
+  top:80px;
+  width:200px;
+  height:30px;
+  font-size:20px;
+  visibility:inherit;
+}
+#rf4 {
+  position:absolute;
+  top:120px;
+  width:200px;
+  height:30px;
+  font-size:20px;
+  visibility:inherit;
+}
+.rftext {
+  width:500px;
+  height:25px;
+  word-wrap:break-word;
+  visibility:inherit;
+}
+#rf1text {
+  position:absolute;
+  width:200px;
+  height:30px;
+  font-size:20px;
+  visibility:inherit;
+}
+#rf2text {
+  position:absolute;
+  top:40px;
+  width:200px;
+  height:30px;
+  font-size:20px;
+  visibility:inherit;
+}
+#rf3text {
+  position:absolute;
+  top:80px;
+  width:200px;
+  height:30px;
+  font-size:20px;
+  visibility:inherit;
+}
+#rf4text {
+  position:absolute;
+  top:120px;
+  width:200px;
+  height:30px;
+  font-size:20px;
+  visibility:inherit;
+}
+
+
