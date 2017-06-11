@@ -29,10 +29,6 @@ $(document).ready(function(){
 		games.pop();
 		payments.pop();
 		
-		console.log(user);
-		console.log(games);
-		console.log(payments);
-			
 		//Replacing user details placeholder
 		var gender = "";
 		if (user[1]=="M"){
