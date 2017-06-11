@@ -1,4 +1,5 @@
 How to start the project:
+
 1. Create new database 'elec3610' in MySQL
 2. Type "use elec3610" in MySQL
 3. Find the path for the project's init sql file included in this project
@@ -13,3 +14,5 @@ How to start the project:
 8. Right click on TomCat server, click on "Add and Remove" then add this project to the server.
 9. Start the server.
 10. Go to "localhost:8080/Elec_3610/main_page.html" and start using the project.
+
+Login using username and password combinations (test, test) or (gmike, 1234) for example data.
