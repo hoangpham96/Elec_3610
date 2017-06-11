@@ -57,6 +57,7 @@ function reloadPayments(user,payments){
 
 	//When edit is clicked
 	$(".cardEdit").click(function(){
+		var index = 0;
 		var cardToEdit = $(this).attr('id').split('-')[1];
 		var card = payments[cardToEdit-1];
 		var cardType = card.split('-')[0];
@@ -83,6 +84,7 @@ function reloadPayments(user,payments){
 		
 		$("#editpaymentOK").click(function(){
 			var pass = true;
+			index++;
 		
 			cardType = $("#rf1textbox").val();
 			cardNum = $("#rf2textbox").val();
@@ -99,7 +101,7 @@ function reloadPayments(user,payments){
 				pass = false;
 			}
 			
-			if(pass){
+			if(pass && index == 1){
 
 				$.post("/Elec_3610/editPayment", {uID: user, type: cardType, num:cardNum, exp: cardExp, ccv:cardCCV, oldNum: cardOldNum}, function(data){
 		   			if(data.includes("true")){
