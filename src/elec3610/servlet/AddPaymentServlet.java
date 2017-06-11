@@ -22,7 +22,7 @@ public class AddPaymentServlet extends HttpServlet {
 		String ccv = request.getParameter("ccv");
 
 		try {		
-			if (type != null && num != null){
+			if (type != null && num != null && exp != null && ccv != null){
 				Class.forName("com.mysql.jdbc.Driver");
 				String mysqlUrl = "jdbc:mysql://localhost:3306/elec3610";
 				Properties userInfo = new Properties();

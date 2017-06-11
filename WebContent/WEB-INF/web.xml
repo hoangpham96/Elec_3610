@@ -65,6 +65,15 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>RemovePayment</servlet-name>
+		<servlet-class>elec3610.servlet.RemovePaymentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RemovePayment</servlet-name>
+		<url-pattern>/removePayment</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>AddPayment</servlet-name>
 		<servlet-class>elec3610.servlet.AddPaymentServlet</servlet-class>
 	</servlet>

@@ -12,15 +12,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class RemoveGameServlet extends HttpServlet {
+public class RemovePaymentServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request,
 						HttpServletResponse response) throws ServletException {
 		String uID = request.getParameter("uID");
-		String gID = request.getParameter("gID");
+		String num = request.getParameter("num");
 		
 		try {		
-			if (uID != null && gID != null){
+			if (uID != null && num != null){
 				Class.forName("com.mysql.jdbc.Driver");
 				String mysqlUrl = "jdbc:mysql://localhost:3306/elec3610";
 				Properties userInfo = new Properties();
@@ -30,12 +30,7 @@ public class RemoveGameServlet extends HttpServlet {
 				Statement stmt = connection.createStatement();
 				String sql = "";
 				
-				if(gID.equals("all")){
-					sql = "DELETE FROM usergamelist WHERE userID = "+uID+";";
-				}
-				else{
-					sql = "DELETE FROM usergamelist WHERE userID = "+uID+" AND gameID = "+gID+";";
-				}
+				sql = "DELETE FROM paymentDetail WHERE userID = "+uID+" AND cardNum = "+num+";";				
 							
 				try{
 					int completed = stmt.executeUpdate(sql);

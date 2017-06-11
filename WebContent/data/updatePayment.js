@@ -59,7 +59,13 @@ function reloadPayments(payments){
  * When click on update in payment section
  */
 $(document).ready(function(){
-	var payments = removeQuotes(getCookie("paymentDetail")).split("_ ");
+	var paymentStr = getCookie("paymentDetail")
+	if(paymentStr[0] == "\""){
+		paymentStr = removeQuotes(paymentStr);
+	}
+	var payments = paymentStr.split("_ ");
+
+	var user = getCookie("uID");
 	payments.pop();
 
 	reloadPayments(payments);
@@ -93,10 +99,6 @@ $(document).ready(function(){
 				var cardNum = $("#rf2textbox").val();
 				var cardExp = $("#rf31textbox").val()+'-'+$("#rf32textbox").val();
 				var cardCCV = $("#rf4textbox").val();
-				console.log(cardType);
-				console.log(cardNum);
-				console.log(cardExp);
-				console.log(cardCCV);
 				
 				//Filter
 				if(cardType == null || cardNum == null || cardExp == null || cardCCV == null){
@@ -109,7 +111,7 @@ $(document).ready(function(){
 				}
 				
 				if(pass){
-					var user = getCookie("uID");
+
 					$.post("/Elec_3610/addPayment", {uID: user, type: cardType, num:cardNum, exp: cardExp, ccv:cardCCV}, function(data){
 			   			if(data.includes("true")){
 			   				alert("Card has been added.");
@@ -144,11 +146,33 @@ $(document).ready(function(){
 		//When edit is clicked
 		$(".cardEdit").click(function(){
 			var cardToEdit = $(this).attr('id').split('-')[1];
+			
 		})
 		
 		//When remove is clicked
 		$(".cardRemove").click(function(){
 			var cardToRemove = $(this).attr('id').split('-')[1];
+			var cardNum = payments[cardToRemove-1].split('-')[1];
+		   	var agree = confirm("This will remove card number "+cardToRemove+".\nDo you wish to continue ?");
+		   	if(agree){
+		   		$.post("/Elec_3610/removePayment", {uID: user, num: cardNum}, function(data){
+		   			if(data.includes("true")){
+		   				alert("Card number "+ cardToRemove + " has been removed.");
+		   				payments.splice(cardToRemove-1,1);
+		   				var paymentStr = "";
+		   				for(var i = 0; i < payments.length; i++){
+		   					paymentStr += payments[i] + "_ ";
+		   				}
+		   				deleteCookie("paymentDetail");
+		   				createCookie("paymentDetail",paymentStr,1);
+		   				reloadPayments(payments);
+		   				$(".payment").css("visibility","visible");
+		   			}
+		   			else{
+		   				alert("We had some trouble deleting your card. Please try again");
+		   			}
+		   		});
+		   	}
 		})
 		
 		//When OK is clicked
