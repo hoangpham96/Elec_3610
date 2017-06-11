@@ -9,7 +9,7 @@ $(document).ready(function(){
 		if(password == '' && firstname == '' && lastname == '' && email == ''){
 			alert("Please enter at least 1 detail");
 		}
-		else if(!email.includes('@')){
+		else if(email != '' && !email.includes('@')){
 			alert("Invalid email.\nEmail must include @ sign.");
 		}
 		else{
