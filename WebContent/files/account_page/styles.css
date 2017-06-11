@@ -357,122 +357,8 @@ body {
   width:293px;
   white-space:nowrap;
 }
-#u1336_div {
-  position:absolute;
-  left:0px;
-  top:0px;
-  width:291px;
-  height:25px;
-  background:inherit;
-  background-color:rgba(221, 221, 221, 1);
-  border:none;
-  border-radius:5px;
-  -moz-box-shadow:none;
-  -webkit-box-shadow:none;
-  box-shadow:none;
-}
-#u1336 {
-  position:absolute;
-  left:21px;
-  top:695px;
-  width:291px;
-  height:25px;
-}
-#u1337 {
-  position:absolute;
-  left:2px;
-  top:4px;
-  width:287px;
-  visibility:hidden;
-  word-wrap:break-word;
-}
-#u1338_div {
-  position:absolute;
-  left:0px;
-  top:0px;
-  width:291px;
-  height:25px;
-  background:inherit;
-  background-color:rgba(221, 221, 221, 1);
-  border:none;
-  border-radius:5px;
-  -moz-box-shadow:none;
-  -webkit-box-shadow:none;
-  box-shadow:none;
-}
-#u1338 {
-  position:absolute;
-  left:332px;
-  top:585px;
-  width:291px;
-  height:25px;
-}
-#u1339 {
-  position:absolute;
-  left:2px;
-  top:4px;
-  width:287px;
-  visibility:hidden;
-  word-wrap:break-word;
-}
-#u1340_div {
-  position:absolute;
-  left:0px;
-  top:0px;
-  width:291px;
-  height:25px;
-  background:inherit;
-  background-color:rgba(221, 221, 221, 1);
-  border:none;
-  border-radius:5px;
-  -moz-box-shadow:none;
-  -webkit-box-shadow:none;
-  box-shadow:none;
-}
-#u1340 {
-  position:absolute;
-  left:21px;
-  top:643px;
-  width:291px;
-  height:25px;
-}
-#u1341 {
-  position:absolute;
-  left:2px;
-  top:4px;
-  width:287px;
-  visibility:hidden;
-  word-wrap:break-word;
-}
-#u1342_div {
-  position:absolute;
-  left:0px;
-  top:0px;
-  width:291px;
-  height:25px;
-  background:inherit;
-  background-color:rgba(221, 221, 221, 1);
-  border:none;
-  border-radius:5px;
-  -moz-box-shadow:none;
-  -webkit-box-shadow:none;
-  box-shadow:none;
-}
-#u1342 {
-  position:absolute;
-  left:21px;
-  top:589px;
-  width:291px;
-  height:25px;
-}
-#u1343 {
-  position:absolute;
-  left:2px;
-  top:4px;
-  width:287px;
-  visibility:hidden;
-  word-wrap:break-word;
-}
+
+
 #u1344_div {
   position:absolute;
   left:0px;
@@ -3251,4 +3137,61 @@ body {
   width:136px;
   word-wrap:break-word;
   visibility:inherit;
+}
+
+#editPassword {
+  position:absolute;
+  left:21px;
+  top:695px;
+  width:291px;
+  height:25px;
+}
+#editPasswordInput {
+  position:absolute;
+  left:2px;
+  top:4px;
+  width:287px;
+  word-wrap:break-word;
+}
+#editLastname {
+  position:absolute;
+  left:332px;
+  top:585px;
+  width:291px;
+  height:25px;
+}
+#editLastnameInput {
+  position:absolute;
+  left:2px;
+  top:4px;
+  width:287px;
+  word-wrap:break-word;
+}
+#editEmail {
+  position:absolute;
+  left:21px;
+  top:643px;
+  width:291px;
+  height:25px;
+}
+#editEmailInput {
+  position:absolute;
+  left:2px;
+  top:4px;
+  width:287px;
+  word-wrap:break-word;
+}
+#editFirstname {
+  position:absolute;
+  left:21px;
+  top:589px;
+  width:291px;
+  height:25px;
+}
+#editFirstnameInput {
+  position:absolute;
+  left:2px;
+  top:4px;
+  width:287px;
+  word-wrap:break-word;
 }

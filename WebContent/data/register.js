@@ -7,8 +7,6 @@ $(document).ready(function(){
 		var lastname = $("#rf4textbox").val();
 		var address = $("#rf6textbox").val();
 		var email = $("#rf7textbox").val();
-		var maleGender =  $("#rfradio1").val();
-		var femaleGender = $("#rfradio2").val();
 
 		
 	   	   
