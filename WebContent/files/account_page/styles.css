@@ -2818,6 +2818,7 @@ body {
   top:325px;
   width:750px;
   height:430px;
+  visibility:hidden;
 }
 #paymentBoxdiv {
   position:absolute;
