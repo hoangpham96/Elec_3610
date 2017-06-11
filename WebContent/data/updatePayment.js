@@ -4,9 +4,15 @@
 $(document).ready(function(){
 	var payments = removeQuotes(getCookie("paymentDetail")).split("_ ");
 	payments.pop();
+	var nPayment = payments.length;
+	
+	//Configuring the sizes
+	$("#addPayment").css({"top":130+nPayment*75});
+	$("#paymentOK").css({"top":130+nPayment*75+75});
+	$("#centerBox").css({"height":130+nPayment*75+75+75});
 	
 	//Change game list
-	if(payments.length > 0){
+	if(nPayment > 0){
 		var htmlCode = "<div id='payments'><!-- For all payments -->\n";
 		
 		//List payment options
@@ -26,7 +32,9 @@ $(document).ready(function(){
 			}
 			lastFour = payment[1].substring(payment[1].length-4,payment[1].length);
 
-			var htmlDiv = "\n<div class='payment'><!-- For one payment -->\n" +
+			//Adding each payment option
+			var paymentPlacement = 75*i;
+			var htmlDiv = "\n<div class='payment' style='top: "+paymentPlacement+"px'><!-- For one payment -->\n" +
 						  "\n<div  class='ax_default icon cardType'>\n" +
 						  "<img class='img cardTypeimg' src='images/cards/"+cardTypeName+".png'/>\n" +
 						  "</div>\n" +
