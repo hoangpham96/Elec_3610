@@ -90,6 +90,7 @@ $(document).ready(function(){
 		$("#addPayment").css("visibility","hidden");
 		$(".payment").css("visibility","hidden");
 		$("#paymentOK").css("visibility","hidden");
+		location.reload();
 	});
 	
 	//When add card is clicked
@@ -145,10 +146,11 @@ $(document).ready(function(){
 		   				$("#addPaymentInput").css("visibility","hidden");
 		   				
 		   				payments.push(cardType+"-"+cardNum+"-"+cardExp+"-"+cardCCV);
-		   				var paymentStr = "";
+		   				var paymentStr = "\"";
 		   				for(var i = 0; i < payments.length; i++){
 		   					paymentStr += payments[i] + "_ ";
 		   				}
+		   				paymentStr += "\"";
 		   				deleteCookie("paymentDetail");
 		   				createCookie("paymentDetail",paymentStr,1);
 		   				reloadPayments(payments);
@@ -250,23 +252,27 @@ $(document).ready(function(){
 	   			if(data.includes("true")){
 	   				alert("Card number "+ cardToRemove + " has been removed.");
 	   				payments.splice(cardToRemove-1,1);
-	   				var paymentStr = "";
+	   				var paymentStr = "\"";
 	   				for(var i = 0; i < payments.length; i++){
 	   					paymentStr += payments[i] + "_ ";
 	   				}
+	   				paymentStr += "\"";
 	   				deleteCookie("paymentDetail");
 	   				createCookie("paymentDetail",paymentStr,1);
 	   				reloadPayments(payments);
-	   				$(".payment").css("visibility","visible");
+	   			   	if(payments.length == 0){
+	   			   		$(".payment").css("visibility","hidden");
+	   			   	}
+	   			   	else{
+	   			   		$(".payment").css("visibility","visible");
+	   			   	}
 	   			}
 	   			else{
 	   				alert("We had some trouble deleting your card. Please try again");
 	   			}
 	   		});
 	   	}
-	   	if(payments.length == 0){
-	   		$(".payment").css("visibility","hidden");
-	   	}
+
 	})
 	
 
