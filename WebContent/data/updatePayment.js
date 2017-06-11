@@ -114,15 +114,14 @@ function reloadPayments(user,payments){
 		   				$("#addPaymentForm").css("visibility","hidden");
 		   				$("#addPaymentInput").css("visibility","hidden");
 		   				
+		   				
 		   				payments.splice(cardToEdit-1,1,cardType+"-"+cardNum+"-"+cardExp+"-"+cardCCV);
 		   				var paymentStr = "";
 		   				for(var i = 0; i < payments.length; i++){
 		   					paymentStr += payments[i] + "_ ";
 		   				}
-		   				console.log(paymentStr)
 		   				deleteCookie("paymentDetail");
 		   				createCookie("paymentDetail",paymentStr,1);
-		   				console.log(getCookie("paymentDetail"));
 		   				reloadPayments(user,payments);
 		   				$(".payment").css("visibility","visible");
 		   			}
@@ -181,7 +180,10 @@ $(document).ready(function(){
 	var payments = paymentStr.split("_ ");
 
 	var user = getCookie("uID");
-	payments.pop();
+	
+	if (payments[payments.length-1].length == 0){
+		payments.pop();
+	}
 
 	reloadPayments(user,payments);
 	
