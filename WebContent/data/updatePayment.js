@@ -54,6 +54,7 @@ function reloadPayments(user,payments){
 		$("#payments").replaceWith(htmlCode);
 	}
 	
+
 	//When edit is clicked
 	$(".cardEdit").click(function(){
 		var cardToEdit = $(this).attr('id').split('-')[1];
@@ -80,9 +81,7 @@ function reloadPayments(user,payments){
 		$("#rf32textbox").val(cardExpYear);
 		$("#rf4textbox").val(cardCCV);
 		
-	})
-	
-	$("#editpaymentOK").click(function(){
+		$("#editpaymentOK").click(function(){
 			var pass = true;
 		
 			cardType = $("#rf1textbox").val();
@@ -131,10 +130,12 @@ function reloadPayments(user,payments){
 		   		});
 			}
 		})
+	})
+	
+	
 	
 	//When remove is clicked
 	$(".cardRemove").click(function(){
-		console.log(payments);
 		var cardToRemove = $(this).attr('id').split('-')[1];
 		var cardNum = payments[cardToRemove-1].split('-')[1];
 	   	var agree = confirm("This will remove card number "+cardToRemove+".\nDo you wish to continue ?");
