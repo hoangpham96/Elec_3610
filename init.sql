@@ -48,7 +48,7 @@ CREATE TABLE usergamelist (
     CONSTRAINT unique_game_for_user UNIQUE (userid,gameid)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-INSERT INTO user() VALUES(NULL, "test", "test", "Testy", "McTest", "M", "address goes here", "test@test.com");
+INSERT INTO user() VALUES(NULL, "test", "test", "Test", "McTest", "M", "address goes here", "test@test.com");
 INSERT INTO user() VALUES(NULL, "gmike", "1234", "George", "Michael", "M", "1 George St, Sydney, NSW 2000", "GM@gmail.com");
 
 INSERT INTO game() VALUES(NULL, "Storm Blood", "u28");

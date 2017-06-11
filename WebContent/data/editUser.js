@@ -6,17 +6,17 @@ $(document).ready(function(){
 		var lastname = $("#editLastnameInput").val();
 		var email = $("#editEmailInput").val();
 		
-		if(password == '' && firstname == '' && lastname == '' && lastname == ''){
+		if(password == '' && firstname == '' && lastname == '' && email == ''){
 			alert("Please enter at least 1 detail");
 		}
 		else if(!email.includes('@')){
-			alert("Invalid email.\n Email must include @ sign.");
+			alert("Invalid email.\nEmail must include @ sign.");
 		}
 		else{
 			$.post("/Elec_3610/editUser", {uID: user, first: firstname, last: lastname, pw:password, em: email}, function(data){
 				if(data.includes("true")){
 					if(password!=''){
-						alert("Sucessfully changed details. Since password was changed, you will now be logged out.");
+						alert("Sucessfully changed details.\nSince password was changed, you will now be logged out.");
 						deleteAllCookies();
 						window.location="main_page.html";
 					}
