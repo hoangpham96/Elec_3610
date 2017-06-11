@@ -43,7 +43,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>FetchGame</servlet-name>
-		<url-pattern>/fetchgame</url-pattern>
+		<url-pattern>/fetchGame</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
@@ -52,7 +52,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>SaveGame</servlet-name>
-		<url-pattern>/save</url-pattern>
+		<url-pattern>/saveGame</url-pattern>
 	</servlet-mapping>
 	
 		<servlet>
@@ -61,7 +61,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>RemoveGame</servlet-name>
-		<url-pattern>/remove</url-pattern>
+		<url-pattern>/removeGame</url-pattern>
 	</servlet-mapping>
 	
 </web-app>

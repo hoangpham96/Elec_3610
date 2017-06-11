@@ -14,21 +14,21 @@ $(document).ready(function(){
 	
 	//Fetching if gameID is known
 	if(gameID != null && (gameName == null || imageID == null) ){
-		$.post("/Elec_3610/fetchgame", {gID: gameID}, function( data ) {
+		$.post("/Elec_3610/fetchGame", {gID: gameID}, function( data ) {
 			  document.location.replace(data);
 		});
 	}
 	
 	//Fetching if imageID is known
 	if(imageID != null && (gameName == null || gameID == null) ){
-		$.post("/Elec_3610/fetchgame", {imgID: imageID}, function( data ) {
+		$.post("/Elec_3610/fetchGame", {imgID: imageID}, function( data ) {
 			  document.location.replace(data);
 		});
 	}
 	
 	//Fetching if gameName is known
 	if(gameName != null  && (imageID == null || gameID == null) ){
-		$.post("/Elec_3610/fetchgame", {gameName: gameName}, function( data ) {
+		$.post("/Elec_3610/fetchGame", {gameName: gameName}, function( data ) {
 			  document.location.replace(data);
 		});
 	}

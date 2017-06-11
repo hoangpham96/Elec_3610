@@ -10,7 +10,7 @@ $(document).ready(function(){
 		var gameName = $(this).attr('id').split('-')[2];
 	   	var agree = confirm("This will remove "+gameName+" from your game list.\nDo you wish to continue ?");
 	   	if(agree){
-	   		$.post("/Elec_3610/remove", {uID: user, gID: gameToRemove}, function(data){
+	   		$.post("/Elec_3610/removeGame", {uID: user, gID: gameToRemove}, function(data){
 	   			if(data.includes("true")){
 	   				alert(gameName + " has been removed.");
 	   				deleteCookie("userDetail");
@@ -27,7 +27,7 @@ $(document).ready(function(){
 	$("#removeAll").click(function(){
 	   	var agree = confirm("This will remove ALL games from your game list.\nDo you wish to continue ?");
 	   	if(agree){
-	   		$.post("/Elec_3610/remove", {uID: user, gID: "all"}, function(data){
+	   		$.post("/Elec_3610/removeGame", {uID: user, gID: "all"}, function(data){
 	   			if(data.includes("true")){
 					alert("All games have been removed.");
 		   			deleteCookie("gameDetail");

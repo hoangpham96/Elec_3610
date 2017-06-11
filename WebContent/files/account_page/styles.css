@@ -2816,8 +2816,8 @@ body {
   position:absolute;
   left:226px;
   top:325px;
-  width:748px;
-  height:437px;
+  width:750px;
+  height:430px;
 }
 #paymentBoxdiv {
   position:absolute;
@@ -2836,8 +2836,8 @@ body {
 }
 #paymentBox {
   position:absolute;
-  width:750px;
-  height:430px;
+  width:inherit;
+  height:inherit;
   visibility:hidden;
 }
 #boxHeaderdiv {
