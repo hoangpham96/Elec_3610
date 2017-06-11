@@ -60,7 +60,6 @@ public class EditUserServlet extends HttpServlet {
 				
 				String sql = "UPDATE user SET "+setString+" WHERE id = '"+uID+"';";
 				try{
-					System.out.println(sql);
 					int completed = stmt.executeUpdate(sql);
 
 					//If the SQL doesn't succeed
