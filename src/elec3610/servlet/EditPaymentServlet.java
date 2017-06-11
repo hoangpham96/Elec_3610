@@ -11,12 +11,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-public class AddPaymentServlet extends HttpServlet {
+public class EditPaymentServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request,
 						HttpServletResponse response) throws ServletException {
 		String uID = request.getParameter("uID");
 		String type = request.getParameter("type");
+		String oldNum = request.getParameter("oldNum");
 		String num = request.getParameter("num");
 		String exp = request.getParameter("exp");
 		String ccv = request.getParameter("ccv");
@@ -31,9 +32,9 @@ public class AddPaymentServlet extends HttpServlet {
 				Connection connection = DriverManager.getConnection(mysqlUrl,userInfo);
 				Statement stmt = connection.createStatement();
 				
-				String sql = "INSERT INTO paymentDetail() VALUES('"+uID+"', '"+type+"', '"+num+"', '"+exp
-						+"', '"+ccv+"');";
+				String sql = "UPDATE paymentDetail SET paymentType = '"+type+"', cardNum = '"+num+"', cardExp = '"+exp+"', cardCCV = '"+ccv+"' WHERE userid = '"+uID+"' AND cardNum = '"+oldNum+"';";
 				try{
+					System.out.println(sql);
 					int completed = stmt.executeUpdate(sql);
 
 					//If the SQL doesn't succeed

@@ -3218,4 +3218,36 @@ body {
   visibility:inherit;
 }
 
-
+#editpaymentOKdiv {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:140px;
+  height:40px;
+  background:inherit;
+  background-color:rgba(22, 155, 213, 1);
+  border:none;
+  border-radius:5px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-size:20px;
+  visibility:inherit;
+}
+#editpaymentOK {
+  position:absolute;
+  left:300px;
+  top:265px;
+  width:140px;
+  height:40px;
+  font-size:20px;
+  visibility:hidden;
+}
+#editpaymentOKText {
+  position:absolute;
+  left:2px;
+  top:8px;
+  width:136px;
+  word-wrap:break-word;
+  visibility:inherit;
+}

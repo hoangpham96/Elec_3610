@@ -82,4 +82,13 @@
 		<url-pattern>/addPayment</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>EditPayment</servlet-name>
+		<servlet-class>elec3610.servlet.EditPaymentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditPayment</servlet-name>
+		<url-pattern>/editPayment</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
